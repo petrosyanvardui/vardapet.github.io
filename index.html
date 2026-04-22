@@ -15,14 +15,14 @@
       padding: 0;
       min-height: 100%;
       font-family: Arial, Helvetica, sans-serif;
-      background: #000;
       color: #fff;
+      background: #000;
     }
 
     body {
       background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-        url('bg.PNG') center / cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.32)),
+        url('bg.PNG') center center / cover no-repeat fixed;
     }
 
     .page {
@@ -35,64 +35,86 @@
 
     .card {
       width: min(760px, 92vw);
-      background: rgba(0, 0, 0, 0.72);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 28px;
-      padding: 40px 28px;
+      background: rgba(0, 0, 0, 0.48);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 30px;
+      padding: 44px 30px 38px;
       text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
     }
 
-    .monogram {
-      font-size: 28px;
-      letter-spacing: 0.4em;
-      margin-bottom: 20px;
-      opacity: 0.9;
+    .topname {
+      font-size: 24px;
+      letter-spacing: 0.38em;
+      opacity: 0.92;
+      margin-bottom: 18px;
     }
 
-    .logo {
-      width: 100%;
-      max-width: 620px;
-      margin-bottom: 16px;
+    .brand {
+      font-size: clamp(56px, 10vw, 108px);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      color: #fff;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      transform: skew(-8deg);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.45);
     }
 
     .divider {
-      width: 60px;
+      width: 64px;
       height: 1px;
-      background: #fff;
-      margin: 18px auto 24px;
-      opacity: 0.7;
+      margin: 18px auto 26px;
+      background: rgba(255,255,255,0.82);
     }
 
     .coming {
-      font-size: 28px;
-      letter-spacing: 0.3em;
+      font-size: clamp(24px, 4vw, 34px);
+      letter-spacing: 0.30em;
       font-weight: 300;
-      margin-bottom: 20px;
+      margin: 0 0 22px;
     }
 
     .sub {
-      font-size: 16px;
+      font-size: clamp(14px, 2vw, 18px);
       margin: 8px 0;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .contacts {
-      margin-top: 25px;
+      margin-top: 26px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      align-items: center;
       font-size: 16px;
     }
 
-    a {
+    .contacts a {
       color: #fff;
       text-decoration: none;
+      opacity: 0.96;
     }
 
-    a:hover {
-      opacity: 0.7;
+    .contacts a:hover {
+      opacity: 0.76;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .card {
+        padding: 34px 18px 28px;
+      }
+
+      .topname {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -100,10 +122,9 @@
 <body>
   <div class="page">
     <div class="card">
+      <div class="topname">VARDAPET</div>
 
-      <div class="monogram">VARDAPET</div>
-
-      <img src="logo.PNG" class="logo"/>
+      <h1 class="brand">VARDAPET</h1>
 
       <div class="divider"></div>
 
@@ -115,11 +136,10 @@
       <div class="divider"></div>
 
       <div class="contacts">
-        <a href="mailto:petrosyanvardui@gmail.com">✉ petrosyanvardui@gmail.com</a>
-        <a href="tel:+4915733273797">✆ +49 157 33273797</a>
+        <a href="mailto:petrosyanvardui@gmail.com">petrosyanvardui@gmail.com</a>
+        <a href="tel:+4915733273797">+49 157 33273797</a>
         <a href="https://instagram.com/vardapet_" target="_blank">@vardapet_</a>
       </div>
-
     </div>
   </div>
 </body>
