@@ -17,7 +17,7 @@
       background: #000;
     }
 
-    .vardapet-hero {
+    .hero {
       min-height: 100vh;
       padding: 80px 20px 48px;
       display: flex;
@@ -27,34 +27,33 @@
       position: relative;
       color: #ffffff;
 
-      background-image: url('bg.jpg');
+      background-image: url('bg.PNG');
       background-size: cover;
       background-position: center;
     }
 
-    .vardapet-hero::before {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.45));
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
     }
 
-    .vardapet-content {
+    .content {
       position: relative;
       z-index: 2;
       width: 100%;
       max-width: 760px;
     }
 
-    .vardapet-logo {
-      font-size: clamp(3rem, 8vw, 5.8rem);
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+    .logo {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 20px;
+      display: block;
     }
 
-    .vardapet-coming {
+    .coming {
       font-size: 0.85rem;
       letter-spacing: 0.35em;
       text-transform: uppercase;
@@ -62,7 +61,7 @@
       opacity: 0.95;
     }
 
-    .vardapet-subtitle {
+    .subtitle {
       font-size: 0.9rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
@@ -70,7 +69,7 @@
       opacity: 0.8;
     }
 
-    .vardapet-contacts {
+    .contacts {
       max-width: 620px;
       margin: 0 auto;
       display: flex;
@@ -78,7 +77,7 @@
       gap: 16px;
     }
 
-    .vardapet-pill {
+    .pill {
       position: relative;
       display: flex;
       align-items: center;
@@ -87,7 +86,7 @@
       padding: 16px 22px;
       border: 1px solid rgba(255,255,255,0.4);
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.05);
       backdrop-filter: blur(6px);
       color: rgba(255,255,255,0.95);
       text-decoration: none;
@@ -96,43 +95,42 @@
       transition: all 0.25s ease;
     }
 
-    .vardapet-pill:hover {
-      background: rgba(255,255,255,0.08);
+    .pill:hover {
+      background: rgba(255,255,255,0.1);
       border-color: rgba(255,255,255,0.7);
       transform: translateY(-1px);
     }
 
-    .vardapet-icon {
+    .icon {
       position: absolute;
       left: 20px;
       width: 20px;
       height: 20px;
     }
 
-    .vardapet-icon svg {
+    .icon svg {
       width: 20px;
       height: 20px;
     }
 
-    .vardapet-label {
+    .label {
       padding: 0 24px;
     }
 
     @media (max-width: 768px) {
-      .vardapet-logo {
-        font-size: clamp(2.4rem, 12vw, 4.2rem);
-        letter-spacing: 0.16em;
+      .logo {
+        max-width: 300px;
       }
 
-      .vardapet-coming {
+      .coming {
         font-size: 0.75rem;
       }
 
-      .vardapet-subtitle {
+      .subtitle {
         font-size: 0.8rem;
       }
 
-      .vardapet-pill {
+      .pill {
         min-height: 52px;
         font-size: 0.9rem;
       }
@@ -142,46 +140,51 @@
 
 <body>
 
-  <section class="vardapet-hero">
-    <div class="vardapet-content">
+  <section class="hero">
+    <div class="content">
 
-      <h1 class="vardapet-logo">VARDAPET</h1>
-      <div class="vardapet-coming">COMING SOON</div>
-      <div class="vardapet-subtitle">Personal brand</div>
+      <!-- LOGO -->
+      <img src="logo.PNG" alt="VARDAPET" class="logo">
 
-      <div class="vardapet-contacts">
+      <!-- TEXT -->
+      <div class="coming">COMING SOON</div>
+      <div class="subtitle">Personal brand by Vardui Petrosyan</div>
 
-        <a href="https://instagram.com/vardapet_" target="_blank" class="vardapet-pill">
-          <span class="vardapet-icon">
+      <!-- CONTACTS -->
+      <div class="contacts">
+
+        <a href="https://instagram.com/vardapet_" target="_blank" class="pill">
+          <span class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="3" y="3" width="18" height="18" rx="5"></rect>
               <circle cx="12" cy="12" r="4"></circle>
               <circle cx="17.5" cy="6.5" r="1"></circle>
             </svg>
           </span>
-          <span class="vardapet-label">@vardapet_</span>
+          <span class="label">@vardapet_</span>
         </a>
 
-        <a href="mailto:petrosyanvardui@gmail.com" class="vardapet-pill">
-          <span class="vardapet-icon">
+        <a href="mailto:petrosyanvardui@gmail.com" class="pill">
+          <span class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="3" y="5" width="18" height="14" rx="4"></rect>
               <path d="M4.5 7l7.5 6 7.5-6"></path>
             </svg>
           </span>
-          <span class="vardapet-label">petrosyanvardui@gmail.com</span>
+          <span class="label">petrosyanvardui@gmail.com</span>
         </a>
 
-        <a href="tel:+4915733273797" class="vardapet-pill">
-          <span class="vardapet-icon">
+        <a href="tel:+4915733273797" class="pill">
+          <span class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M5.5 4.5h2.8l1.8 4.4-1.9 1.5a14.8 14.8 0 0 0 5.4 5.4l1.5-1.9 4.4 1.8v2.8a2 2 0 0 1-2.2 2A17.5 17.5 0 0 1 3.5 6.7 2 2 0 0 1 5.5 4.5z"></path>
             </svg>
           </span>
-          <span class="vardapet-label">+49 157 33273797</span>
+          <span class="label">+49 157 33273797</span>
         </a>
 
       </div>
+
     </div>
   </section>
 
