@@ -2,689 +2,817 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="de">
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <meta name="theme-color" content="#080808">
+<meta name="theme-color" content="#17100c">
 
-  <title>VARDAPET — Director · Digital Creator · Cultural Researcher</title>
+<title>VARDAPET — Director · Digital Creator · Cultural Research</title>
 
-  <meta name="description" content="VARDAPET is the independent artistic identity of Vardui Petrosyan, spanning film direction, visual storytelling and cultural research. Based in Germany.">
+<meta name="description" content="VARDAPET is the independent artistic identity of Vardui Petrosyan, spanning film direction, visual storytelling and cultural research.">
 
-  <meta name="author" content="Vardui Petrosyan">
+<meta name="author" content="Vardui Petrosyan">
 
-  <meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://vardapet.de/">
+<link rel="canonical" href="https://vardapet.de/">
 
-  <meta property="og:type" content="website">
+<meta property="og:type" content="website">
 
-  <meta property="og:title" content="VARDAPET — Director · Digital Creator · Cultural Researcher">
+<meta property="og:title" content="VARDAPET — Director · Digital Creator · Cultural Research">
 
-  <meta property="og:description" content="Independent artistic identity of Vardui Petrosyan — film direction, visual storytelling and cultural research.">
+<meta property="og:description" content="Independent artistic identity of Vardui Petrosyan.">
 
-  <meta property="og:url" content="https://vardapet.de/">
+<meta property="og:image" content="https://vardapet.de/bg.jpeg">
 
-  <meta property="og:image" content="https://vardapet.de/bg.jpeg">
+<meta property="og:url" content="https://vardapet.de/">
 
-  <meta name="twitter:card" content="summary_large_image">
+<style>
 
-  <meta name="twitter:title" content="VARDAPET — Director · Digital Creator · Cultural Researcher">
+:root {
 
-  <meta name="twitter:description" content="Independent artistic identity of Vardui Petrosyan.">
+  --ink: #160d08;
 
-  <meta name="twitter:image" content="https://vardapet.de/bg.jpeg">
+  --light: #fff9ef;
 
-  <script type="application/ld+json">
+  --dark: #090909;
 
-  {
+}
 
-    "@context": "https://schema.org",
+* {
 
-    "@type": "Person",
+  box-sizing: border-box;
 
-    "name": "Vardui Petrosyan",
+}
 
-    "alternateName": "VARDAPET",
+html {
 
-    "url": "https://vardapet.de/",
+  min-height: 100%;
 
-    "sameAs": [
+}
 
-      "https://www.instagram.com/vardapet_/"
+body {
 
-    ],
+  margin: 0;
 
-    "jobTitle": [
+  min-height: 100%;
 
-      "Director",
+  background: var(--dark);
 
-      "Digital Creator",
+  color: var(--light);
 
-      "Cultural Researcher"
+  font-family: "Segoe Print", "Bradley Hand",
 
-    ],
+               "Comic Sans MS", cursive;
 
-    "knowsAbout": [
+  -webkit-font-smoothing: antialiased;
 
-      "Film Direction",
+}
 
-      "Visual Storytelling",
+body.modal-open {
 
-      "Cultural Research",
+  overflow: hidden;
 
-      "Photography",
+}
 
-      "Creative Direction"
+button, a {
 
-    ]
+  font: inherit;
+
+}
+
+button {
+
+  cursor: pointer;
+
+}
+
+a {
+
+  color: inherit;
+
+}
+
+button:focus-visible,
+
+a:focus-visible {
+
+  outline: 2px solid currentColor;
+
+  outline-offset: 4px;
+
+}
+
+/* MAIN BACKGROUND */
+
+.home {
+
+  position: relative;
+
+  isolation: isolate;
+
+  min-height: 100vh;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background-image: url("bg.jpeg");
+
+  background-color: #bb7132;
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  color: var(--ink);
+
+}
+
+.home::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background: linear-gradient(
+
+    180deg,
+
+    rgba(255,205,137,0.08) 0%,
+
+    rgba(255,185,89,0.02) 60%,
+
+    rgba(0,0,0,0.28) 100%
+
+  );
+
+}
+
+/* LANGUAGE SWITCHER */
+
+.languages {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  padding: 23px 30px;
+
+}
+
+.languages button {
+
+  border: 0;
+
+  border-bottom: 1px solid transparent;
+
+  padding: 5px 2px;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 14px;
+
+}
+
+.languages button[aria-pressed="true"] {
+
+  border-bottom-color: currentColor;
+
+  font-weight: 700;
+
+}
+
+/* HOME CONTENT */
+
+.home-content {
+
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: auto;
+
+  padding: 20px 5vw 35px;
+
+}
+
+.identity {
+
+  width: min(100%, 660px);
+
+  margin-bottom: 45px;
+
+}
+
+.logo {
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  height: auto;
+
+  mix-blend-mode: multiply;
+
+}
+
+.brand-title {
+
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+
+}
+
+.tagline {
+
+  margin: 0;
+
+  font-size: clamp(14px, 1.7vw, 23px);
+
+  line-height: 1.5;
+
+  letter-spacing: 0.015em;
+
+}
+
+/* DESCRIPTION */
+
+.description {
+
+  width: 100%;
+
+  max-width: 750px;
+
+  margin: 0;
+
+  text-align: left;
+
+  font-size: clamp(14px, 1.5vw, 20px);
+
+  line-height: 1.75;
+
+}
+
+.description p {
+
+  margin: 0 0 25px;
+
+}
+
+/* MAIN MENU */
+
+.main-menu {
+
+  display: flex;
+
+  justify-content: flex-start;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px 32px;
+
+  margin-top: 55px;
+
+}
+
+.main-menu a {
+
+  font-size: clamp(12px, 1.2vw, 17px);
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+
+}
+
+.main-menu a:hover {
+
+  opacity: 0.6;
+
+}
+
+/* FOOTER */
+
+.footer {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px 25px;
+
+  padding: 16px 5vw 22px;
+
+  background: rgba(0,0,0,0.12);
+
+  color: white;
+
+  font-size: 12px;
+
+}
+
+.footer-links {
+
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+}
+
+.footer a {
+
+  text-decoration: none;
+
+}
+
+.footer a:hover {
+
+  text-decoration: underline;
+
+}
+
+/* POP-UP OVERLAY */
+
+.overlay[hidden] {
+
+  display: none !important;
+
+}
+
+.overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background: rgba(0,0,0,0.76);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+}
+
+/* POP-UP WINDOW */
+
+.modal {
+
+  position: relative;
+
+  width: min(850px, 100%);
+
+  max-height: 90vh;
+
+  max-height: 90dvh;
+
+  overflow-y: auto;
+
+  overscroll-behavior: contain;
+
+  padding: 55px 45px 45px;
+
+  background: #090909;
+
+  color: #f5f5f5;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  border-radius: 5px;
+
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+
+}
+
+.modal-close {
+
+  position: sticky;
+
+  top: 0;
+
+  float: right;
+
+  margin: -40px -25px 0 0;
+
+  width: 40px;
+
+  height: 40px;
+
+  border: 0;
+
+  background: #090909;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 30px;
+
+}
+
+.modal h2 {
+
+  margin: 0 0 35px;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  text-align: center;
+
+}
+
+.modal h3 {
+
+  margin: 28px 0 10px;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+}
+
+.modal p {
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  color: rgba(255,255,255,0.83);
+
+}
+
+.modal a {
+
+  overflow-wrap: anywhere;
+
+}
+
+.contact-links {
+
+  display: grid;
+
+  gap: 14px;
+
+  margin-top: 30px;
+
+}
+
+.contact-links a {
+
+  display: block;
+
+  padding: 17px;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  border-radius: 50px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+}
+
+.contact-links a:hover {
+
+  background: rgba(255,255,255,0.1);
+
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+
+  .home {
+
+    background-position: center 45%;
 
   }
 
-  </script>
+  .home-content {
 
-  <style>
+    padding-top: 35px;
 
-    :root {
+    padding-bottom: 45px;
 
-      --background: #080808;
+  }
 
-      --foreground: #ffffff;
+  .identity {
 
-      --muted: rgba(255,255,255,0.78);
+    margin-bottom: 35px;
 
-      --line: rgba(255,255,255,0.17);
+  }
 
-      --content-width: 1050px;
+}
 
-    }
+/* IPHONE / MOBILE */
 
-    * {
+@media (max-width: 650px) {
 
-      box-sizing: border-box;
+  .home {
 
-    }
+    min-height: 100svh;
 
-    html {
+    background-position: center center;
 
-      scroll-behavior: smooth;
+    background-size: cover;
 
-    }
+  }
 
-    body {
+  .home::before {
 
-      margin: 0;
+    background: linear-gradient(
 
-      background: var(--background);
+      180deg,
 
-      color: var(--foreground);
+      rgba(255,210,150,0.10) 0%,
 
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      rgba(255,185,90,0.02) 68%,
 
-      font-weight: 300;
+      rgba(0,0,0,0.38) 100%
 
-      -webkit-font-smoothing: antialiased;
+    );
 
-    }
+  }
 
-    a {
+  .languages {
 
-      color: inherit;
+    padding: 18px 23px;
 
-    }
+    gap: 16px;
 
-    button {
+  }
 
-      font: inherit;
+  .languages button {
 
-    }
+    font-size: 13px;
 
-    /* HERO */
+  }
 
-    .hero {
+  .home-content {
 
-      min-height: 100vh;
+    margin: 0;
 
-      min-height: 100svh;
+    padding: 30px 6vw 40px;
 
-      padding: 90px 22px 55px;
+  }
 
-      display: flex;
+  .identity {
 
-      align-items: center;
+    width: 100%;
 
-      justify-content: center;
+    margin: 15px 0 35px;
 
-      position: relative;
+  }
 
-      text-align: center;
+  .logo {
 
-      background-color: #171717;
+    width: 100%;
 
-      background-image: url("bg.jpeg");
+    max-width: 100%;
 
-      background-position: center;
+  }
 
-      background-size: cover;
+  .tagline {
 
-      background-repeat: no-repeat;
+    font-size: clamp(12px, 3.1vw, 16px);
 
-      isolation: isolate;
+    line-height: 1.5;
 
-    }
+    text-align: left;
 
-    .hero::before {
+  }
 
-      content: "";
+  .description {
 
-      position: absolute;
+    width: 100%;
 
-      inset: 0;
+    max-width: none;
 
-      z-index: -1;
+    margin: 0;
 
-      background: linear-gradient(
+    padding: 0;
 
-        180deg,
+    text-align: left;
 
-        rgba(0,0,0,0.16) 0%,
+    font-size: clamp(13px, 3.4vw, 16px);
 
-        rgba(0,0,0,0.27) 40%,
+    line-height: 1.7;
 
-        rgba(0,0,0,0.60) 100%
+  }
 
-      );
+  .description p {
 
-    }
+    margin-bottom: 22px;
 
-    .hero-content {
+  }
 
-      width: 100%;
+  .main-menu {
 
-      max-width: 850px;
+    margin-top: 65px;
 
-      margin: auto;
+    gap: 16px 20px;
 
-    }
+  }
 
-    .logo-link {
+  .main-menu a {
 
-      display: inline-block;
+    font-size: 12px;
 
-      max-width: 100%;
+  }
 
-      text-decoration: none;
+  .footer {
 
-    }
+    margin-top: auto;
 
-    .logo {
+    padding: 18px 6vw 24px;
 
-      display: block;
+    font-size: 11px;
 
-      width: min(100%, 500px);
+  }
 
-      height: auto;
+  .overlay {
 
-      margin: 0 auto 22px;
+    padding: 10px;
 
-    }
+  }
 
-    .brand {
+  .modal {
 
-      margin: 0 0 12px;
+    max-height: 94dvh;
 
-      font-size: 0.82rem;
+    padding: 52px 22px 35px;
 
-      font-weight: 400;
+  }
 
-      letter-spacing: 0.32em;
+  .modal-close {
 
-    }
+    margin: -37px -8px 0 0;
 
-    .subtitle {
+  }
 
-      margin: 0 0 27px;
+  .modal h2 {
 
-      font-size: 0.96rem;
+    font-size: 21px;
 
-      line-height: 1.6;
+  }
 
-      letter-spacing: 0.055em;
+  .modal p {
 
-    }
+    font-size: 14px;
 
-    .description {
+  }
 
-      max-width: 720px;
+}
 
-      margin: 0 auto;
+/* SMALL IPHONES */
 
-      font-size: 0.94rem;
+@media (max-width: 380px) {
 
-      line-height: 1.8;
+  .tagline {
 
-      text-shadow: 0 1px 8px rgba(0,0,0,0.65);
+    font-size: 11px;
 
-    }
+  }
 
-    .description p {
+  .description {
 
-      margin: 0 0 15px;
+    font-size: 12px;
 
-    }
+  }
 
-    /* LANGUAGE SWITCHER */
+  .main-menu {
 
-    .language-switcher {
+    gap: 14px;
 
-      position: absolute;
+  }
 
-      top: 23px;
+  .main-menu a {
 
-      right: 26px;
+    font-size: 11px;
 
-      z-index: 5;
+  }
 
-      display: flex;
+}
 
-      align-items: center;
+@media (prefers-reduced-motion: reduce) {
 
-      gap: 11px;
+  * {
 
-    }
+    scroll-behavior: auto !important;
 
-    .language-switcher button {
+    transition: none !important;
 
-      padding: 7px 3px;
+  }
 
-      border: 0;
+}
 
-      border-bottom: 1px solid transparent;
+</style>
 
-      background: transparent;
+<script type="application/ld+json">
 
-      color: rgba(255,255,255,0.7);
+{
 
-      font-size: 0.78rem;
+  "@context": "https://schema.org",
 
-      letter-spacing: 0.1em;
+  "@type": "Person",
 
-      cursor: pointer;
+  "name": "Vardui Petrosyan",
 
-    }
+  "alternateName": "VARDAPET",
 
-    .language-switcher button[aria-pressed="true"] {
+  "url": "https://vardapet.de/",
 
-      color: #fff;
+  "sameAs": [
 
-      border-bottom-color: #fff;
+    "https://www.instagram.com/vardapet_/"
 
-      font-weight: 600;
+  ],
 
-    }
+  "jobTitle": [
 
-    /* NAVIGATION */
+    "Director",
 
-    .main-nav {
+    "Digital Creator",
 
-      display: flex;
+    "Cultural Researcher"
 
-      justify-content: center;
+  ]
 
-      flex-wrap: wrap;
+}
 
-      gap: 15px 25px;
-
-      margin: 36px auto 0;
-
-    }
-
-    .main-nav a {
-
-      font-size: 0.78rem;
-
-      font-weight: 400;
-
-      letter-spacing: 0.12em;
-
-      text-decoration: none;
-
-      transition: opacity 0.2s ease;
-
-    }
-
-    .main-nav a:hover {
-
-      opacity: 0.65;
-
-    }
-
-    /* CONTENT SECTIONS */
-
-    .section {
-
-      max-width: var(--content-width);
-
-      margin: 0 auto;
-
-      padding: 100px 24px;
-
-      scroll-margin-top: 20px;
-
-    }
-
-    .section-title {
-
-      margin: 0 0 32px;
-
-      text-align: center;
-
-      font-size: 1.25rem;
-
-      font-weight: 400;
-
-      letter-spacing: 0.22em;
-
-    }
-
-    .section-text {
-
-      max-width: 760px;
-
-      margin: 0 auto;
-
-      text-align: center;
-
-      font-size: 0.97rem;
-
-      line-height: 1.85;
-
-      color: var(--muted);
-
-    }
-
-    .section-text p {
-
-      margin: 0 0 18px;
-
-    }
-
-    .divider {
-
-      max-width: 850px;
-
-      height: 1px;
-
-      margin: 0 auto;
-
-      background: var(--line);
-
-    }
-
-    /* CONTACT */
-
-    .contacts {
-
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 14px;
-
-      max-width: 720px;
-
-      margin: 35px auto 0;
-
-    }
-
-    .pill {
-
-      display: block;
-
-      padding: 17px 18px;
-
-      border: 1px solid rgba(255,255,255,0.42);
-
-      border-radius: 999px;
-
-      background: rgba(255,255,255,0.035);
-
-      text-align: center;
-
-      text-decoration: none;
-
-      overflow-wrap: anywhere;
-
-      transition: background 0.2s ease;
-
-    }
-
-    .pill:hover {
-
-      background: rgba(255,255,255,0.11);
-
-    }
-
-    /* LEGAL */
-
-    .legal {
-
-      max-width: 850px;
-
-      margin: 0 auto;
-
-      padding: 75px 25px;
-
-      line-height: 1.8;
-
-      scroll-margin-top: 20px;
-
-    }
-
-    .legal h2 {
-
-      margin: 0 0 35px;
-
-      text-align: center;
-
-      font-size: 1.2rem;
-
-      font-weight: 400;
-
-      letter-spacing: 0.14em;
-
-    }
-
-    .legal h3 {
-
-      margin: 30px 0 10px;
-
-      font-size: 1rem;
-
-      font-weight: 500;
-
-    }
-
-    .legal p {
-
-      margin: 10px 0;
-
-      color: var(--muted);
-
-    }
-
-    .legal a {
-
-      text-decoration: underline;
-
-      text-underline-offset: 3px;
-
-    }
-
-    [data-lang-block] {
-
-      display: none;
-
-    }
-
-    [data-lang-block].shown {
-
-      display: block;
-
-    }
-
-    /* FOOTER */
-
-    .footer {
-
-      padding: 45px 20px 55px;
-
-      text-align: center;
-
-      color: rgba(255,255,255,0.72);
-
-      font-size: 0.78rem;
-
-    }
-
-    .footer nav {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 15px 25px;
-
-      margin-bottom: 20px;
-
-    }
-
-    .footer a {
-
-      text-decoration: none;
-
-    }
-
-    .footer a:hover {
-
-      opacity: 0.65;
-
-    }
-
-    :focus-visible {
-
-      outline: 2px solid #fff;
-
-      outline-offset: 4px;
-
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 650px) {
-
-      .hero {
-
-        padding: 85px 17px 45px;
-
-      }
-
-      .logo {
-
-        width: min(100%, 390px);
-
-        margin-bottom: 18px;
-
-      }
-
-      .brand {
-
-        font-size: 0.73rem;
-
-      }
-
-      .subtitle {
-
-        font-size: 0.79rem;
-
-      }
-
-      .description {
-
-        font-size: 0.82rem;
-
-        line-height: 1.7;
-
-      }
-
-      .description p {
-
-        margin-bottom: 12px;
-
-      }
-
-      .main-nav {
-
-        gap: 14px 16px;
-
-        margin-top: 28px;
-
-      }
-
-      .main-nav a {
-
-        font-size: 0.69rem;
-
-      }
-
-      .section {
-
-        padding: 75px 20px;
-
-      }
-
-      .legal {
-
-        padding: 65px 20px;
-
-      }
-
-      .language-switcher {
-
-        top: 14px;
-
-        right: 16px;
-
-      }
-
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-
-        scroll-behavior: auto;
-
-      }
-
-    }
-
-  </style>
+</script>
 
 </head>
 
 <body>
 
+<main class="home" id="home">
+
   <!-- LANGUAGE SWITCHER -->
 
-  <div class="language-switcher"
+  <div class="languages"
 
        role="group"
 
@@ -692,9 +820,15 @@
 
     <button type="button"
 
+            data-lang="de"
+
+            aria-pressed="true">DE</button>
+
+    <button type="button"
+
             data-lang="en"
 
-            aria-pressed="true">EN</button>
+            aria-pressed="false">EN</button>
 
     <button type="button"
 
@@ -702,955 +836,99 @@
 
             aria-pressed="false">RU</button>
 
-    <button type="button"
-
-            data-lang="de"
-
-            aria-pressed="false">DE</button>
-
   </div>
 
-  <main>
+  <!-- HOME CONTENT -->
 
-    <!-- HOME -->
+  <div class="home-content">
 
-    <section class="hero" id="home">
+    <header class="identity">
 
-      <div class="hero-content">
+      <h1 class="brand-title">VARDAPET</h1>
 
-        <a href="#home"
+      <img
 
-           class="logo-link"
+        src="logo.PNG"
 
-           aria-label="VARDAPET — Home">
+        class="logo"
 
-          <img src="logo.PNG"
+        alt="VARDAPET handwritten logo"
 
-               class="logo"
+      >
 
-               alt="VARDAPET handwritten logo">
+      <p class="tagline">
 
-        </a>
+        Director · Digital Creator · Cultural Research
 
-        <h1 class="brand">VARDAPET</h1>
+      </p>
 
-        <p class="subtitle" data-i18n="tagline">
+    </header>
 
-          Director · Digital Creator · Cultural Researcher
+    <!-- THREE INTRO PARAGRAPHS -->
 
-        </p>
+    <div class="description">
 
-        <div class="description">
+      <p data-key="intro1"></p>
 
-          <p data-i18n="intro1">
+      <p data-key="intro2"></p>
 
-            VARDAPET is the independent artistic identity
+      <p data-key="intro3"></p>
 
-            of Vardui Petrosyan, spanning film direction,
+    </div>
 
-            visual storytelling and cultural research.
+    <!-- NAVIGATION -->
 
-          </p>
+    <nav class="main-menu"
 
-          <p data-i18n="intro2">
+         aria-label="Main navigation">
 
-            This multidisciplinary, author-driven creative
-
-            practice is rooted in Armenian heritage, shaped
-
-            by a cross-cultural journey from her Siberian
-
-            homeland through Europe and the United States,
-
-            and currently based in Germany.
-
-          </p>
-
-          <p data-i18n="intro3">
-
-            It explores identity, faith, memory, freedom
-
-            and the human condition.
-
-          </p>
-
-        </div>
-
-        <nav class="main-nav" aria-label="Main navigation">
-
-          <a href="#about" data-i18n="about">
-
-            ABOUT
-
-          </a>
-
-          <a href="#portfolio" data-i18n="portfolio">
-
-            PORTFOLIO
-
-          </a>
-
-          <a href="#research" data-i18n="research">
-
-            RESEARCH
-
-          </a>
-
-          <a href="#collaborations" data-i18n="collaborations">
-
-            COLLABORATIONS
-
-          </a>
-
-          <a href="#contact" data-i18n="contact">
-
-            CONTACT
-
-          </a>
-
-        </nav>
-
-      </div>
-
-    </section>
-
-    <!-- ABOUT -->
-
-    <section class="section" id="about">
-
-      <h2 class="section-title" data-i18n="about">
+      <a href="#about" data-key="about">
 
         ABOUT
 
-      </h2>
+      </a>
 
-      <div class="section-text">
-
-        <p data-i18n="aboutText">
-
-          Independent film direction, visual storytelling
-
-          and a multidisciplinary artistic practice informed
-
-          by cultural research and lived experience.
-
-          A fuller biography and director's statement
-
-          will follow.
-
-        </p>
-
-      </div>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PORTFOLIO -->
-
-    <section class="section" id="portfolio">
-
-      <h2 class="section-title" data-i18n="portfolio">
+      <a href="#portfolio" data-key="portfolio">
 
         PORTFOLIO
 
-      </h2>
+      </a>
 
-      <div class="section-text">
-
-        <p data-i18n="portfolioText">
-
-          Selected films, music visuals, photography
-
-          and independent artistic projects.
-
-          Curated work will be added here.
-
-        </p>
-
-      </div>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- RESEARCH -->
-
-    <section class="section" id="research">
-
-      <h2 class="section-title" data-i18n="research">
+      <a href="#research" data-key="research">
 
         RESEARCH
 
-      </h2>
+      </a>
 
-      <div class="section-text">
-
-        <p data-i18n="researchText">
-
-          Cultural research, visual archives, memory,
-
-          heritage and field notes exploring connections
-
-          between images, places and histories.
-
-        </p>
-
-      </div>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- COLLABORATIONS -->
-
-    <section class="section" id="collaborations">
-
-      <h2 class="section-title" data-i18n="collaborations">
+      <a href="#collaborations" data-key="collaborations">
 
         COLLABORATIONS
 
-      </h2>
+      </a>
 
-      <div class="section-text">
-
-        <p data-i18n="collaborationsText">
-
-          VARDAPET is developing selected artistic
-
-          collaboration formats in film direction,
-
-          visual storytelling, photography and cultural
-
-          research. Specific commercial services,
-
-          pricing and direct booking options are
-
-          not currently offered through this website.
-
-        </p>
-
-      </div>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- CONTACT -->
-
-    <section class="section" id="contact">
-
-      <h2 class="section-title" data-i18n="contact">
+      <a href="#contact" data-key="contact">
 
         CONTACT
 
-      </h2>
+      </a>
 
-      <div class="section-text">
+    </nav>
 
-        <p data-i18n="contactText">
-
-          For professional inquiries and artistic collaborations:
-
-        </p>
-
-      </div>
-
-      <div class="contacts">
-
-        <a class="pill"
-
-           href="https://www.instagram.com/vardapet_/"
-
-           target="_blank"
-
-           rel="noopener noreferrer">
-
-          Instagram · @vardapet_
-
-        </a>
-
-        <a class="pill"
-
-           href="mailto:petrosyanvardui@gmail.com">
-
-          petrosyanvardui@gmail.com
-
-        </a>
-
-        <a class="pill"
-
-           href="tel:+4915733273797">
-
-          +49 157 33273797
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- IMPRESSUM: WORKING DRAFT -->
-
-    <section class="legal" id="impressum">
-
-      <h2>IMPRESSUM</h2>
-
-      <h3>Angaben zur Website</h3>
-
-      <p>
-
-        VARDAPET<br>
-
-        Unabhängige künstlerische Identität
-
-        von Vardui Petrosyan
-
-      </p>
-
-      <h3>Verantwortliche Person</h3>
-
-      <p>
-
-        Vardui Petrosyan<br>
-
-        Deutschland
-
-      </p>
-
-      <h3>Kontakt</h3>
-
-      <p>
-
-        E-Mail:
-
-        <a href="mailto:petrosyanvardui@gmail.com">
-
-          petrosyanvardui@gmail.com
-
-        </a>
-
-        <br>
-
-        Telefon:
-
-        <a href="tel:+4915733273797">
-
-          +49 157 33273797
-
-        </a>
-
-      </p>
-
-      <h3>Projektstatus</h3>
-
-      <p>
-
-        Diese Website dient der Präsentation
-
-        einer bestehenden unabhängigen
-
-        künstlerischen Praxis, ausgewählter
-
-        Arbeiten sowie kultureller Forschung.
-
-      </p>
-
-      <p>
-
-        Konkrete kommerzielle Leistungen,
-
-        verbindliche Preisangebote und
-
-        unmittelbare Buchungsmöglichkeiten
-
-        werden derzeit vorbereitet und
-
-        über diese Website noch nicht angeboten.
-
-      </p>
-
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PRIVACY POLICY -->
-
-    <section class="legal" id="privacy">
-
-      <h2 data-i18n="privacy">
-
-        PRIVACY POLICY
-
-      </h2>
-
-      <!-- ENGLISH -->
-
-      <div data-lang-block="en" class="shown">
-
-        <h3>1. Controller</h3>
-
-        <p>
-
-          Vardui Petrosyan<br>
-
-          VARDAPET<br>
-
-          Germany
-
-        </p>
-
-        <p>
-
-          Email:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>2. Hosting and access data</h3>
-
-        <p>
-
-          This website is hosted through GitHub Pages,
-
-          a service provided by GitHub, Inc.
-
-          When accessing the website, technically
-
-          necessary data such as IP addresses,
-
-          access times and browser information
-
-          may be processed to deliver the website
-
-          and maintain its security.
-
-        </p>
-
-        <p>
-
-          The precise processing operations,
-
-          retention periods and any international
-
-          data transfers must be assessed
-
-          against GitHub's current privacy
-
-          documentation and the actual
-
-          hosting configuration.
-
-          Where applicable, Article 6(1)(f)
-
-          GDPR may serve as the legal basis.
-
-        </p>
-
-        <h3>3. Contact</h3>
-
-        <p>
-
-          If you contact VARDAPET by email or
-
-          telephone, the information you provide
-
-          is processed to respond to your inquiry.
-
-          Depending on the circumstances,
-
-          the legal basis may be Article 6(1)(b)
-
-          or (f) GDPR.
-
-        </p>
-
-        <p>
-
-          Data is deleted when no longer needed,
-
-          unless statutory retention requirements apply.
-
-        </p>
-
-        <h3>4. External links</h3>
-
-        <p>
-
-          This website contains a link to Instagram.
-
-          When visiting external websites,
-
-          the respective provider's privacy policy applies.
-
-          No Instagram feed is currently embedded.
-
-        </p>
-
-        <h3>5. Cookies and analytics</h3>
-
-        <p>
-
-          The current website code does not intentionally
-
-          use cookies, analytics tools, advertising trackers
-
-          or embedded third-party media players.
-
-          If these technologies are added,
-
-          this policy and applicable consent
-
-          requirements must be reviewed.
-
-        </p>
-
-        <h3>6. Your rights</h3>
-
-        <p>
-
-          Subject to applicable legal requirements,
-
-          you may request access, rectification,
-
-          erasure, restriction of processing,
-
-          data portability or object to processing.
-
-          You may also lodge a complaint with
-
-          a competent data protection authority.
-
-        </p>
-
-        <p>
-
-          Contact:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>7. Updates</h3>
-
-        <p>
-
-          This privacy notice must be updated
-
-          when the website's technical setup
-
-          or data processing changes.
-
-        </p>
-
-        <p>Last reviewed: October 2026 (draft).</p>
-
-      </div>
-
-      <!-- RUSSIAN -->
-
-      <div data-lang-block="ru">
-
-        <h3>1. Ответственное лицо</h3>
-
-        <p>
-
-          Vardui Petrosyan<br>
-
-          VARDAPET<br>
-
-          Германия
-
-        </p>
-
-        <p>
-
-          Email:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>2. Хостинг и технические данные</h3>
-
-        <p>
-
-          Сайт размещён на GitHub Pages,
-
-          сервисе GitHub, Inc.
-
-          При посещении могут обрабатываться
-
-          технические данные, включая IP-адрес,
-
-          время запроса и информацию о браузере,
-
-          необходимые для работы сайта
-
-          и обеспечения безопасности.
-
-        </p>
-
-        <p>
-
-          Конкретные операции обработки,
-
-          сроки хранения и международную
-
-          передачу данных необходимо проверить
-
-          по актуальной документации GitHub
-
-          и фактической конфигурации сайта.
-
-          В применимых случаях правовым
-
-          основанием может быть статья 6(1)(f) GDPR.
-
-        </p>
-
-        <h3>3. Обращения</h3>
-
-        <p>
-
-          При обращении по электронной почте
-
-          или телефону предоставленные сведения
-
-          используются для ответа на запрос.
-
-          В зависимости от обстоятельств
-
-          основанием может выступать
-
-          статья 6(1)(b) или (f) GDPR.
-
-        </p>
-
-        <p>
-
-          Данные удаляются после отпадения
-
-          необходимости, если законодательство
-
-          не требует их дальнейшего хранения.
-
-        </p>
-
-        <h3>4. Внешние ссылки</h3>
-
-        <p>
-
-          Сайт содержит ссылку на Instagram.
-
-          При переходе на сторонний ресурс
-
-          действуют правила его владельца.
-
-          Лента Instagram непосредственно
-
-          на сайте не встроена.
-
-        </p>
-
-        <h3>5. Cookies и аналитика</h3>
-
-        <p>
-
-          В текущем коде сайта намеренно
-
-          не используются cookies,
-
-          аналитические или рекламные трекеры,
-
-          а также встроенные сторонние
-
-          медиаплееры.
-
-          При добавлении подобных технологий
-
-          необходимо пересмотреть эту политику
-
-          и требования к согласию.
-
-        </p>
-
-        <h3>6. Ваши права</h3>
-
-        <p>
-
-          В соответствии с законодательством
-
-          вы можете запросить доступ
-
-          к персональным данным, их исправление,
-
-          удаление, ограничение обработки,
-
-          переносимость данных и возразить
-
-          против обработки.
-
-          Также вы можете обратиться
-
-          в компетентный надзорный орган.
-
-        </p>
-
-        <p>
-
-          Контакт:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>7. Изменения</h3>
-
-        <p>
-
-          Политика обновляется при изменении
-
-          технической конфигурации сайта
-
-          или обработки данных.
-
-        </p>
-
-        <p>Дата редакции: октябрь 2026 года (проект).</p>
-
-      </div>
-
-      <!-- GERMAN -->
-
-      <div data-lang-block="de">
-
-        <h3>1. Verantwortliche Person</h3>
-
-        <p>
-
-          Vardui Petrosyan<br>
-
-          VARDAPET<br>
-
-          Deutschland
-
-        </p>
-
-        <p>
-
-          E-Mail:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>2. Hosting und Zugriffsdaten</h3>
-
-        <p>
-
-          Diese Website wird über GitHub Pages,
-
-          einen Dienst von GitHub, Inc.,
-
-          bereitgestellt.
-
-          Beim Aufruf können technisch notwendige
-
-          Daten wie IP-Adresse, Zugriffszeitpunkt
-
-          und Browserinformationen verarbeitet
-
-          werden, um die Website auszuliefern
-
-          und ihre Sicherheit zu gewährleisten.
-
-        </p>
-
-        <p>
-
-          Die konkreten Verarbeitungsvorgänge,
-
-          Speicherdauern und etwaige
-
-          Drittlandübermittlungen sind anhand
-
-          der aktuellen Datenschutzhinweise
-
-          von GitHub und der tatsächlichen
-
-          Hostingkonfiguration zu prüfen.
-
-          Soweit einschlägig, kommt
-
-          Art. 6 Abs. 1 lit. f DSGVO
-
-          als Rechtsgrundlage in Betracht.
-
-        </p>
-
-        <h3>3. Kontaktaufnahme</h3>
-
-        <p>
-
-          Bei einer Kontaktaufnahme per E-Mail
-
-          oder Telefon werden die übermittelten
-
-          Angaben zur Bearbeitung der Anfrage
-
-          verarbeitet.
-
-          Rechtsgrundlage ist je nach Sachverhalt
-
-          Art. 6 Abs. 1 lit. b oder f DSGVO.
-
-        </p>
-
-        <p>
-
-          Die Daten werden gelöscht,
-
-          sobald sie nicht mehr erforderlich
-
-          sind, sofern keine gesetzlichen
-
-          Aufbewahrungspflichten bestehen.
-
-        </p>
-
-        <h3>4. Externe Links</h3>
-
-        <p>
-
-          Diese Website enthält einen Link
-
-          zu Instagram.
-
-          Beim Besuch externer Websites
-
-          gelten die Datenschutzhinweise
-
-          des jeweiligen Anbieters.
-
-          Ein Instagram-Feed ist derzeit
-
-          nicht eingebettet.
-
-        </p>
-
-        <h3>5. Cookies und Analyse</h3>
-
-        <p>
-
-          Der aktuelle Website-Code verwendet
-
-          bewusst keine Cookies,
-
-          Analyse- oder Werbetracker
-
-          und keine eingebetteten Medien
-
-          von Drittanbietern.
-
-          Bei technischen Änderungen
-
-          sind diese Erklärung und mögliche
-
-          Einwilligungspflichten erneut zu prüfen.
-
-        </p>
-
-        <h3>6. Betroffenenrechte</h3>
-
-        <p>
-
-          Nach Maßgabe der gesetzlichen
-
-          Voraussetzungen bestehen Rechte
-
-          auf Auskunft, Berichtigung,
-
-          Löschung, Einschränkung der Verarbeitung,
-
-          Datenübertragbarkeit und Widerspruch.
-
-          Außerdem besteht ein Beschwerderecht
-
-          bei einer zuständigen
-
-          Datenschutzaufsichtsbehörde.
-
-        </p>
-
-        <p>
-
-          Kontakt:
-
-          <a href="mailto:petrosyanvardui@gmail.com">
-
-            petrosyanvardui@gmail.com
-
-          </a>
-
-        </p>
-
-        <h3>7. Änderungen</h3>
-
-        <p>
-
-          Diese Datenschutzerklärung wird
-
-          bei Änderungen der technischen
-
-          Einrichtung oder Datenverarbeitung
-
-          angepasst.
-
-        </p>
-
-        <p>Stand: Oktober 2026 (Entwurf).</p>
-
-      </div>
-
-    </section>
-
-  </main>
+  </div>
 
   <!-- FOOTER -->
 
   <footer class="footer">
 
-    <nav aria-label="Legal navigation">
+    <span>
 
-      <a href="#home" data-i18n="home">
+      © <span id="year">2026</span>
 
-        HOME
+      VARDAPET · Vardui Petrosyan
 
-      </a>
+    </span>
+
+    <div class="footer-links">
 
       <a href="#impressum">
 
@@ -1658,257 +936,743 @@
 
       </a>
 
-      <a href="#privacy" data-i18n="privacy">
+      <a href="#privacy" data-key="privacy">
 
-        Privacy Policy
+        Datenschutzerklärung
 
       </a>
-
-    </nav>
-
-    <div>
-
-      © <span id="year">2026</span>
-
-      VARDAPET · Vardui Petrosyan
 
     </div>
 
   </footer>
 
-  <!-- TRANSLATIONS -->
+</main>
 
-  <script>
+<!-- POP-UP WINDOW -->
 
-    const translations = {
+<div class="overlay" id="overlay" hidden>
 
-      en: {
+  <section
 
-        tagline:
+    class="modal"
 
-          "Director · Digital Creator · Cultural Researcher",
+    id="modal"
 
-        intro1:
+    role="dialog"
 
-          "VARDAPET is the independent artistic identity of Vardui Petrosyan, spanning film direction, visual storytelling and cultural research.",
+    aria-modal="true"
 
-        intro2:
+    aria-labelledby="modal-title"
 
-          "This multidisciplinary, author-driven creative practice is rooted in Armenian heritage, shaped by a cross-cultural journey from her Siberian homeland through Europe and the United States, and currently based in Germany.",
+    tabindex="-1"
 
-        intro3:
+  >
 
-          "It explores identity, faith, memory, freedom and the human condition.",
+    <button
 
-        home: "HOME",
+      type="button"
 
-        about: "ABOUT",
+      class="modal-close"
 
-        portfolio: "PORTFOLIO",
+      id="modal-close"
 
-        research: "RESEARCH",
+      aria-label="Close window"
 
-        collaborations: "COLLABORATIONS",
+    >×</button>
 
-        contact: "CONTACT",
+    <h2 id="modal-title"></h2>
 
-        aboutText:
+    <div id="modal-content"></div>
 
-          "Independent film direction, visual storytelling and a multidisciplinary artistic practice informed by cultural research and lived experience. A fuller biography and director's statement will follow.",
+  </section>
 
-        portfolioText:
+</div>
 
-          "Selected films, music visuals, photography and independent artistic projects. Curated work will be added here.",
+<script>
 
-        researchText:
+/* LANGUAGE CONTENT */
 
-          "Cultural research, visual archives, memory, heritage and field notes exploring connections between images, places and histories.",
+const translations = {
 
-        collaborationsText:
+  de: {
 
-          "VARDAPET is developing selected artistic collaboration formats in film direction, visual storytelling, photography and cultural research. Specific commercial services, pricing and direct booking options are not currently offered through this website.",
+    about: "ÜBER MICH",
 
-        contactText:
+    portfolio: "PORTFOLIO",
 
-          "For professional inquiries and artistic collaborations:",
+    research: "FORSCHUNG",
 
-        privacy: "PRIVACY POLICY"
+    collaborations: "KOOPERATIONEN",
 
-      },
+    contact: "KONTAKT",
 
-      ru: {
+    privacy: "DATENSCHUTZERKLÄRUNG",
 
-        tagline:
+    intro1:
 
-          "Режиссёр · Диджитал-креатор · Исследователь культуры",
+      "VARDAPET ist die unabhängige künstlerische Identität von Vardui Petrosyan und verbindet Filmregie, visuelles Storytelling und Kulturforschung.",
 
-        intro1:
+    intro2:
 
-          "VARDAPET — независимая художественная идентичность Вардуи Петросян, объединяющая режиссуру, визуальное повествование и культурные исследования.",
+      "Diese multidisziplinäre, autorengeprägte künstlerische Praxis wurzelt im armenischen Kulturerbe und ist von einem interkulturellen Weg aus ihrer sibirischen Heimat durch Europa und die Vereinigten Staaten geprägt. Ihr aktueller Standort ist Deutschland.",
 
-        intro2:
+    intro3:
 
-          "Эта междисциплинарная авторская практика укоренена в армянском наследии и сформирована межкультурным путём из родной Сибири через Европу и Соединённые Штаты. В настоящее время её база находится в Германии.",
+      "Sie erforscht Identität, Glauben, Erinnerung, Freiheit und die menschliche Existenz.",
 
-        intro3:
+    aboutBody:
 
-          "Она исследует идентичность, веру, память, свободу и человеческое существование.",
+      "<p>VARDAPET ist die unabhängige künstlerische Identität von Vardui Petrosyan.</p><p>Ihre künstlerische Praxis umfasst unabhängige Regie, visuelles Storytelling, Fotografie und Kulturforschung.</p><p>Eine ausführliche Biografie und ein Director's Statement werden ergänzt.</p>",
 
-        home: "ГЛАВНАЯ",
+    portfolioBody:
 
-        about: "ОБО МНЕ",
+      "<p>Ausgewählte Filme, Musikvisuals, Fotografie und unabhängige künstlerische Projekte.</p><p>Das kuratierte Portfolio wird schrittweise erweitert.</p>",
 
-        portfolio: "ПОРТФОЛИО",
+    researchBody:
 
-        research: "ИССЛЕДОВАНИЯ",
+      "<p>Kulturforschung, visuelle Archive, Erinnerung, Kulturerbe und Feldnotizen.</p><p>VARDAPET untersucht Verbindungen zwischen Bildern, Orten, Geschichte und kultureller Identität.</p>",
 
-        collaborations: "СОТРУДНИЧЕСТВО",
+    collaborationsBody:
 
-        contact: "КОНТАКТЫ",
+      "<p>VARDAPET entwickelt ausgewählte Formate künstlerischer Zusammenarbeit in den Bereichen Filmregie, visuelles Storytelling, Fotografie und Kulturforschung.</p><p>Konkrete kommerzielle Leistungen, verbindliche Preise und direkte Buchungsmöglichkeiten werden derzeit vorbereitet und über diese Website noch nicht angeboten.</p>",
 
-        aboutText:
+    contactBody:
 
-          "Независимая режиссура, визуальное повествование и междисциплинарная художественная практика, основанная на культурных исследованиях и личном опыте. Подробная биография и режиссёрское высказывание будут добавлены позже.",
+      "<p>Für professionelle Anfragen und künstlerische Kooperationen:</p>"
 
-        portfolioText:
+  },
 
-          "Избранные фильмы, музыкальные визуальные работы, фотография и независимые художественные проекты. Портфолио будет постепенно пополняться.",
+  en: {
 
-        researchText:
+    about: "ABOUT",
 
-          "Культурные исследования, визуальные архивы, память, наследие и путевые заметки о связях между образами, местами и историей.",
+    portfolio: "PORTFOLIO",
 
-        collaborationsText:
+    research: "RESEARCH",
 
-          "VARDAPET развивает направления художественного сотрудничества в области режиссуры, визуального повествования, фотографии и культурных исследований. Конкретные коммерческие услуги, цены и возможность непосредственного заказа через сайт пока находятся в подготовке.",
+    collaborations: "COLLABORATIONS",
 
-        contactText:
+    contact: "CONTACT",
 
-          "Для профессиональных обращений и творческого сотрудничества:",
+    privacy: "PRIVACY POLICY",
 
-        privacy:
+    intro1:
 
-          "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"
+      "VARDAPET is the independent artistic identity of Vardui Petrosyan, spanning film direction, visual storytelling and cultural research.",
 
-      },
+    intro2:
 
-      de: {
+      "This multidisciplinary, author-driven creative practice is rooted in Armenian heritage, shaped by a cross-cultural journey from her Siberian homeland through Europe and the United States, and currently based in Germany.",
 
-        tagline:
+    intro3:
 
-          "Regie · Digital Creator · Kulturforschung",
+      "It explores identity, faith, memory, freedom and the human condition.",
 
-        intro1:
+    aboutBody:
 
-          "VARDAPET ist die unabhängige künstlerische Identität von Vardui Petrosyan und verbindet Filmregie, visuelles Storytelling und Kulturforschung.",
+      "<p>VARDAPET is the independent artistic identity of Vardui Petrosyan.</p><p>Her practice spans independent direction, visual storytelling, photography and cultural research.</p><p>A fuller biography and director's statement will follow.</p>",
 
-        intro2:
+    portfolioBody:
 
-          "Diese multidisziplinäre, autorengeprägte künstlerische Praxis wurzelt im armenischen Kulturerbe und ist von einem interkulturellen Weg aus ihrer sibirischen Heimat durch Europa und die Vereinigten Staaten geprägt. Ihr aktueller Standort ist Deutschland.",
+      "<p>Selected films, music visuals, photography and independent artistic projects.</p><p>Curated works will be added progressively.</p>",
 
-        intro3:
+    researchBody:
 
-          "Sie erforscht Identität, Glauben, Erinnerung, Freiheit und die menschliche Existenz.",
+      "<p>Cultural research, visual archives, memory, heritage and field notes.</p><p>VARDAPET explores connections between images, places, history and cultural identity.</p>",
 
-        home: "STARTSEITE",
+    collaborationsBody:
 
-        about: "ÜBER MICH",
+      "<p>VARDAPET is developing selected artistic collaboration formats in film direction, visual storytelling, photography and cultural research.</p><p>Specific commercial services, pricing and direct booking options are not currently offered through this website.</p>",
 
-        portfolio: "PORTFOLIO",
+    contactBody:
 
-        research: "FORSCHUNG",
+      "<p>For professional inquiries and artistic collaborations:</p>"
 
-        collaborations: "KOOPERATIONEN",
+  },
 
-        contact: "KONTAKT",
+  ru: {
 
-        aboutText:
+    about: "ОБО МНЕ",
 
-          "Unabhängige Filmregie, visuelles Storytelling und eine multidisziplinäre künstlerische Praxis, geprägt von Kulturforschung und persönlichen Erfahrungen. Eine ausführliche Biografie und ein Regiestatement folgen.",
+    portfolio: "ПОРТФОЛИО",
 
-        portfolioText:
+    research: "ИССЛЕДОВАНИЯ",
 
-          "Ausgewählte Filme, Musikvisuals, Fotografie und unabhängige künstlerische Projekte. Das kuratierte Portfolio wird ergänzt.",
+    collaborations: "СОТРУДНИЧЕСТВО",
 
-        researchText:
+    contact: "КОНТАКТЫ",
 
-          "Kulturforschung, visuelle Archive, Erinnerung, Kulturerbe und Feldnotizen über die Verbindungen zwischen Bildern, Orten und Geschichte.",
+    privacy: "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ",
 
-        collaborationsText:
+    intro1:
 
-          "VARDAPET entwickelt ausgewählte Formate künstlerischer Zusammenarbeit in den Bereichen Filmregie, visuelles Storytelling, Fotografie und Kulturforschung. Konkrete kommerzielle Leistungen, verbindliche Preise und direkte Buchungsmöglichkeiten werden derzeit vorbereitet und über diese Website noch nicht angeboten.",
+      "VARDAPET — независимая художественная идентичность Вардуи Петросян, объединяющая режиссуру, визуальное повествование и культурные исследования.",
 
-        contactText:
+    intro2:
 
-          "Für professionelle Anfragen und künstlerische Kooperationen:",
+      "Эта междисциплинарная авторская практика укоренена в армянском наследии и сформирована межкультурным путём из родной Сибири через Европу и Соединённые Штаты. В настоящее время её база находится в Германии.",
 
-        privacy: "DATENSCHUTZERKLÄRUNG"
+    intro3:
 
-      }
+      "Она исследует идентичность, веру, память, свободу и человеческое существование.",
 
-    };
+    aboutBody:
 
-    function setLanguage(lang) {
+      "<p>VARDAPET — независимая художественная идентичность Вардуи Петросян.</p><p>Её творческая практика объединяет независимую режиссуру, визуальное повествование, фотографию и культурные исследования.</p><p>Подробная биография и режиссёрское высказывание будут добавлены позже.</p>",
 
-      if (!translations[lang]) return;
+    portfolioBody:
 
-      document.documentElement.lang = lang;
+      "<p>Избранные фильмы, музыкальные визуальные работы, фотография и независимые художественные проекты.</p><p>Портфолио будет постепенно пополняться.</p>",
 
-      document.querySelectorAll("[data-i18n]").forEach(el => {
+    researchBody:
 
-        const key = el.dataset.i18n;
+      "<p>Культурные исследования, визуальные архивы, память, наследие и путевые заметки.</p><p>VARDAPET исследует связи между образами, местами, историей и культурной идентичностью.</p>",
 
-        if (translations[lang][key] !== undefined) {
+    collaborationsBody:
 
-          el.textContent = translations[lang][key];
+      "<p>VARDAPET развивает направления художественного сотрудничества в области режиссуры, визуального повествования, фотографии и культурных исследований.</p><p>Конкретные коммерческие услуги, цены и возможность непосредственного заказа через сайт пока находятся в подготовке.</p>",
 
-        }
+    contactBody:
 
-      });
+      "<p>Для профессиональных обращений и творческого сотрудничества:</p>"
 
-      document.querySelectorAll("[data-lang-block]").forEach(el => {
+  }
 
-        el.classList.toggle(
+};
 
-          "shown",
+/* LEGAL TEXTS */
 
-          el.dataset.langBlock === lang
+const impressum = `
 
-        );
+  <h3>Angaben zur Website</h3>
 
-      });
+  <p>
 
-      document.querySelectorAll("[data-lang]").forEach(btn => {
+    VARDAPET<br>
 
-        btn.setAttribute(
+    Unabhängige künstlerische Identität
 
-          "aria-pressed",
+    von Vardui Petrosyan
 
-          String(btn.dataset.lang === lang)
+  </p>
 
-        );
+  <h3>Verantwortliche Person</h3>
 
-      });
+  <p>
+
+    Vardui Petrosyan<br>
+
+    Deutschland
+
+  </p>
+
+  <h3>Kontakt</h3>
+
+  <p>
+
+    E-Mail:
+
+    <a href="mailto:petrosyanvardui@gmail.com">
+
+      petrosyanvardui@gmail.com
+
+    </a>
+
+    <br>
+
+    Telefon:
+
+    <a href="tel:+4915733273797">
+
+      +49 157 33273797
+
+    </a>
+
+  </p>
+
+  <h3>Projektstatus</h3>
+
+  <p>
+
+    Diese Website präsentiert eine bestehende
+
+    unabhängige künstlerische Praxis,
+
+    ausgewählte Arbeiten und kulturelle Forschung.
+
+  </p>
+
+  <p>
+
+    Konkrete kommerzielle Leistungen,
+
+    verbindliche Preisangebote und direkte
+
+    Buchungsmöglichkeiten befinden sich
+
+    in Vorbereitung und werden hier
+
+    derzeit nicht angeboten.
+
+  </p>
+
+`;
+
+const privacy = `
+
+  <h3>1. Verantwortliche Person</h3>
+
+  <p>
+
+    Vardui Petrosyan<br>
+
+    VARDAPET<br>
+
+    Deutschland<br>
+
+    E-Mail:
+
+    <a href="mailto:petrosyanvardui@gmail.com">
+
+      petrosyanvardui@gmail.com
+
+    </a>
+
+  </p>
+
+  <h3>2. Hosting und Zugriffsdaten</h3>
+
+  <p>
+
+    Diese Website wird über GitHub Pages,
+
+    einen Dienst von GitHub, Inc.,
+
+    bereitgestellt.
+
+    Beim Besuch können technisch notwendige
+
+    Daten wie IP-Adresse, Zugriffszeitpunkt
+
+    und Browserinformationen verarbeitet werden.
+
+  </p>
+
+  <p>
+
+    Die konkreten Verarbeitungsvorgänge,
+
+    Speicherdauern und etwaige
+
+    Drittlandübermittlungen sind anhand
+
+    der aktuellen GitHub-Dokumentation
+
+    und der tatsächlichen Hostingkonfiguration
+
+    zu prüfen.
+
+    Soweit einschlägig, kommt
+
+    Art. 6 Abs. 1 lit. f DSGVO
+
+    als Rechtsgrundlage in Betracht.
+
+  </p>
+
+  <h3>3. Kontaktaufnahme</h3>
+
+  <p>
+
+    Bei einer Kontaktaufnahme per E-Mail
+
+    oder Telefon werden die übermittelten
+
+    Daten zur Bearbeitung der Anfrage verarbeitet.
+
+    Je nach Sachverhalt kommen
+
+    Art. 6 Abs. 1 lit. b oder f DSGVO
+
+    als Rechtsgrundlage in Betracht.
+
+  </p>
+
+  <h3>4. Externe Links</h3>
+
+  <p>
+
+    Diese Website enthält einen Link zu Instagram.
+
+    Beim Besuch externer Websites gelten
+
+    die Datenschutzhinweise des jeweiligen Anbieters.
+
+    Ein Instagram-Feed ist derzeit nicht eingebettet.
+
+  </p>
+
+  <h3>5. Cookies und Analyse</h3>
+
+  <p>
+
+    Der aktuelle Website-Code setzt selbst
+
+    keine Cookies und verwendet keine eigenen
+
+    Analyse- oder Werbetracker.
+
+    Bei technischen Änderungen muss diese
+
+    Datenschutzerklärung angepasst werden.
+
+  </p>
+
+  <h3>6. Betroffenenrechte</h3>
+
+  <p>
+
+    Nach Maßgabe der gesetzlichen Voraussetzungen
+
+    bestehen Rechte auf Auskunft, Berichtigung,
+
+    Löschung, Einschränkung der Verarbeitung,
+
+    Datenübertragbarkeit und Widerspruch.
+
+    Außerdem besteht ein Beschwerderecht
+
+    bei einer zuständigen Datenschutzaufsichtsbehörde.
+
+  </p>
+
+  <h3>7. Stand</h3>
+
+  <p>
+
+    Oktober 2026 — Entwurf.
+
+    Die Erklärung ist vor rechtlicher Verwendung
+
+    und bei technischen Änderungen zu überprüfen.
+
+  </p>
+
+`;
+
+/* CONTACT LINKS */
+
+const contactLinks = `
+
+  <div class="contact-links">
+
+    <a href="https://www.instagram.com/vardapet_/"
+
+       target="_blank"
+
+       rel="noopener noreferrer">
+
+      Instagram · @vardapet_
+
+    </a>
+
+    <a href="mailto:petrosyanvardui@gmail.com">
+
+      petrosyanvardui@gmail.com
+
+    </a>
+
+    <a href="tel:+4915733273797">
+
+      +49 157 33273797
+
+    </a>
+
+  </div>
+
+`;
+
+/* LANGUAGE SWITCHING */
+
+let currentLanguage = "de";
+
+function setLanguage(lang) {
+
+  if (!translations[lang]) return;
+
+  currentLanguage = lang;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-key]").forEach(el => {
+
+    const key = el.dataset.key;
+
+    if (translations[lang][key] !== undefined) {
+
+      el.textContent = translations[lang][key];
 
     }
 
-    document.querySelectorAll("[data-lang]").forEach(btn => {
+  });
 
-      btn.addEventListener("click", () => {
+  document.querySelectorAll("[data-lang]").forEach(btn => {
 
-        setLanguage(btn.dataset.lang);
+    btn.setAttribute(
 
-      });
+      "aria-pressed",
 
-    });
+      String(btn.dataset.lang === lang)
 
-    document.getElementById("year").textContent =
+    );
 
-      new Date().getFullYear();
+  });
 
-    setLanguage("en");
+  const activeSection = location.hash.slice(1);
 
-  </script>
+  if (allowedSections.has(activeSection)) {
+
+    renderModal(activeSection);
+
+  }
+
+}
+
+document.querySelectorAll("[data-lang]").forEach(btn => {
+
+  btn.addEventListener("click", () => {
+
+    setLanguage(btn.dataset.lang);
+
+  });
+
+});
+
+/* POP-UP SYSTEM */
+
+const allowedSections = new Set([
+
+  "about",
+
+  "portfolio",
+
+  "research",
+
+  "collaborations",
+
+  "contact",
+
+  "impressum",
+
+  "privacy"
+
+]);
+
+const overlay = document.getElementById("overlay");
+
+const modal = document.getElementById("modal");
+
+const modalTitle = document.getElementById("modal-title");
+
+const modalContent = document.getElementById("modal-content");
+
+const closeButton = document.getElementById("modal-close");
+
+let previousFocus = null;
+
+function renderModal(section) {
+
+  if (!allowedSections.has(section)) return;
+
+  const language = translations[currentLanguage];
+
+  if (section === "impressum") {
+
+    modalTitle.textContent = "IMPRESSUM";
+
+    modalContent.innerHTML = impressum;
+
+    return;
+
+  }
+
+  if (section === "privacy") {
+
+    modalTitle.textContent = language.privacy;
+
+    modalContent.innerHTML = privacy;
+
+    return;
+
+  }
+
+  modalTitle.textContent = language[section];
+
+  modalContent.innerHTML =
+
+    language[section + "Body"] || "";
+
+  if (section === "contact") {
+
+    modalContent.innerHTML += contactLinks;
+
+  }
+
+}
+
+function openModal(section) {
+
+  if (!allowedSections.has(section)) return;
+
+  if (overlay.hidden) {
+
+    previousFocus = document.activeElement;
+
+  }
+
+  renderModal(section);
+
+  overlay.hidden = false;
+
+  document.body.classList.add("modal-open");
+
+  modal.scrollTop = 0;
+
+  closeButton.focus();
+
+}
+
+function closeModal() {
+
+  overlay.hidden = true;
+
+  document.body.classList.remove("modal-open");
+
+  if (previousFocus &&
+
+      typeof previousFocus.focus === "function") {
+
+    previousFocus.focus();
+
+  }
+
+}
+
+function syncHash() {
+
+  const section = decodeURIComponent(
+
+    location.hash.slice(1)
+
+  );
+
+  if (allowedSections.has(section)) {
+
+    openModal(section);
+
+  } else {
+
+    closeModal();
+
+  }
+
+}
+
+function navigateHome() {
+
+  history.pushState(
+
+    null,
+
+    "",
+
+    location.pathname + location.search
+
+  );
+
+  closeModal();
+
+}
+
+closeButton.addEventListener("click", navigateHome);
+
+overlay.addEventListener("click", event => {
+
+  if (event.target === overlay) {
+
+    navigateHome();
+
+  }
+
+});
+
+document.addEventListener("keydown", event => {
+
+  if (overlay.hidden) return;
+
+  if (event.key === "Escape") {
+
+    navigateHome();
+
+  }
+
+  if (event.key === "Tab") {
+
+    const focusable = Array.from(
+
+      modal.querySelectorAll(
+
+        'a[href], button:not([disabled])'
+
+      )
+
+    ).filter(el => el.getClientRects().length);
+
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey &&
+
+        document.activeElement === first) {
+
+      event.preventDefault();
+
+      last.focus();
+
+    } else if (
+
+      !event.shiftKey &&
+
+      document.activeElement === last
+
+    ) {
+
+      event.preventDefault();
+
+      first.focus();
+
+    }
+
+  }
+
+});
+
+window.addEventListener("hashchange", syncHash);
+
+window.addEventListener("popstate", syncHash);
+
+document.getElementById("year").textContent =
+
+  new Date().getFullYear();
+
+setLanguage("de");
+
+syncHash();
+
+</script>
 
 </body>
 
