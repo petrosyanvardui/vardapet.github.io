@@ -1,2975 +1,1733 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-
 <meta name="theme-color" content="#080808">
-
 <meta name="robots" content="index,follow">
-
 <meta name="description" content="VARDAPET — Vardui Petrosyan. Director, Digital Creator and Cultural Researcher.">
-
 <link rel="canonical" href="https://vardapet.de/">
-
 <title>VARDAPET — Vardui Petrosyan</title>
 
 <style>
-
 :root{
-
   --bg:#080808;
-
   --fg:#f1efec;
-
   --muted:#b6b1ac;
-
   --line:#373431;
-
 }
-
 *{box-sizing:border-box}
-
 html,body{
-
   margin:0;
-
   width:100%;
-
   height:100%;
-
   overflow:hidden;
-
   background:var(--bg);
-
   color:var(--fg);
-
   font-family:Arial,Helvetica,sans-serif;
-
   -webkit-font-smoothing:antialiased;
-
 }
-
 button,a{-webkit-tap-highlight-color:transparent}
-
 button{font:inherit;cursor:pointer}
-
 button:focus-visible,a:focus-visible{
-
   outline:1px solid white;
-
   outline-offset:4px;
-
 }
-
 .site{
-
   position:relative;
-
   width:100%;
-
   height:100svh;
-
   min-height:320px;
-
   overflow:hidden;
-
 }
-
 .scene{
-
   position:absolute;
-
   inset:0;
-
   overflow:hidden;
-
   transition:opacity .85s ease,visibility .85s ease;
-
 }
-
 .scene[aria-hidden="true"]{
-
   opacity:0;
-
   visibility:hidden;
-
   pointer-events:none;
-
 }
 
-/* INTRO — NIGHT SKY */
-
+/* INTRO */
 .intro{
-
   z-index:2;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   background:#05070d;
-
   isolation:isolate;
-
 }
-
 .intro-photo{
-
   position:absolute;
-
   inset:0;
-
   width:100%;
-
   height:100%;
-
   object-fit:cover;
-
   object-position:center;
-
   z-index:-3;
-
 }
-
 .intro::before{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   background:rgba(0,0,0,.22);
-
   z-index:-2;
-
 }
-
 .intro::after{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   background:radial-gradient(
-
     ellipse at center,
-
     rgba(0,0,0,.03) 12%,
-
     rgba(0,0,0,.34) 100%
-
   );
-
   z-index:-1;
-
 }
 
-/*
-
-  MOONLIGHT SILVER
-
-  Original logo preserved.
-
-  Silver illumination is produced with CSS.
-
-*/
-
+/* DEEP AMETHYST GLOW */
 .logo-entry{
-
   position:relative;
-
   display:flex;
-
   justify-content:center;
-
   align-items:center;
-
   padding:20px;
-
   width:min(95vw,900px);
-
   border:0;
-
   background:transparent;
-
   transform-origin:center;
-
   animation:logoBreath 4.8s ease-in-out infinite;
-
   isolation:isolate;
-
 }
-
 .logo-entry::before{
-
   content:"";
-
   position:absolute;
-
-  left:11%;
-
-  right:11%;
-
-  top:19%;
-
-  bottom:19%;
-
+  left:10%;
+  right:10%;
+  top:17%;
+  bottom:17%;
   z-index:-1;
-
   pointer-events:none;
-
   background:radial-gradient(
-
     ellipse at center,
-
-    rgba(172,196,228,.18) 0%,
-
-    rgba(129,158,199,.09) 38%,
-
-    transparent 75%
-
+    rgba(92,55,145,.32) 0%,
+    rgba(69,37,111,.2) 38%,
+    rgba(33,18,58,.06) 65%,
+    transparent 80%
   );
-
   filter:blur(34px);
-
-  animation:moonHalo 4.8s ease-in-out infinite;
-
+  animation:amethystHalo 4.8s ease-in-out infinite;
 }
-
 .logo-entry img{
-
   display:block;
-
   width:100%;
-
   max-height:65svh;
-
   object-fit:contain;
-
-  filter:
-
-    brightness(2.2)
-
-    contrast(1.16)
-
-    drop-shadow(0 0 3px rgba(237,244,255,.85))
-
-    drop-shadow(0 0 11px rgba(183,209,248,.58))
-
-    drop-shadow(0 0 29px rgba(124,163,223,.32));
-
-  animation:moonlight 4.8s ease-in-out infinite;
-
-  transition:filter .3s ease;
-
+  animation:amethystLight 4.8s ease-in-out infinite;
 }
-
 @keyframes logoBreath{
-
   0%,100%{transform:scale(1)}
-
   50%{transform:scale(1.038)}
-
 }
-
-@keyframes moonlight{
-
+@keyframes amethystLight{
   0%,100%{
-
     filter:
-
       brightness(2.05)
-
       contrast(1.15)
-
-      drop-shadow(0 0 3px rgba(237,244,255,.8))
-
-      drop-shadow(0 0 10px rgba(183,209,248,.48))
-
-      drop-shadow(0 0 27px rgba(124,163,223,.27));
-
+      drop-shadow(0 0 3px rgba(242,237,255,.85))
+      drop-shadow(0 0 10px rgba(136,98,190,.52))
+      drop-shadow(0 0 25px rgba(79,42,137,.33));
   }
-
   50%{
-
     filter:
-
-      brightness(2.5)
-
-      contrast(1.2)
-
-      drop-shadow(0 0 5px rgba(245,249,255,.95))
-
-      drop-shadow(0 0 17px rgba(193,218,255,.72))
-
-      drop-shadow(0 0 39px rgba(140,177,235,.44));
-
+      brightness(2.42)
+      contrast(1.18)
+      drop-shadow(0 0 5px rgba(250,246,255,.95))
+      drop-shadow(0 0 15px rgba(153,109,213,.65))
+      drop-shadow(0 0 34px rgba(91,49,157,.43));
   }
-
 }
-
-@keyframes moonHalo{
-
+@keyframes amethystHalo{
   0%,100%{opacity:.55;transform:scale(.96)}
-
-  50%{opacity:1;transform:scale(1.08)}
-
+  50%{opacity:.9;transform:scale(1.07)}
 }
-
-.logo-entry:hover img{
-
-  filter:
-
-    brightness(2.8)
-
-    contrast(1.2)
-
-    drop-shadow(0 0 7px rgba(255,255,255,.95))
-
-    drop-shadow(0 0 25px rgba(183,209,248,.8));
-
-}
-
 .intro.entering .logo-entry{
-
   animation:enterLogo .8s ease-in forwards;
-
 }
-
 .intro.entering .logo-entry img,
-
 .intro.entering .logo-entry::before{
-
   animation:none;
-
 }
-
 @keyframes enterLogo{
-
   from{transform:scale(1);opacity:1}
-
   to{transform:scale(1.14);opacity:0}
-
 }
 
-/* SECOND SCREEN */
-
+/* MAIN VISUAL */
 .visual{
-
   z-index:1;
-
   background:#15110d;
-
   isolation:isolate;
-
 }
-
 .visual-photo{
-
   position:absolute;
-
   inset:0;
-
   width:100%;
-
   height:100%;
-
   object-fit:cover;
-
   object-position:center;
-
   z-index:-3;
-
 }
-
 .visual::before{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   z-index:-2;
-
   background:linear-gradient(
-
     to bottom,
-
     rgba(0,0,0,.48) 0%,
-
     rgba(0,0,0,.12) 30%,
-
     transparent 48%,
-
     rgba(0,0,0,.18) 68%,
-
     rgba(0,0,0,.72) 100%
-
   );
-
 }
-
 .visual::after{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   z-index:-1;
-
   background:radial-gradient(
-
     ellipse at center,
-
     transparent 35%,
-
     rgba(0,0,0,.17) 100%
-
   );
-
 }
-
 .return-logo{
-
   position:absolute;
-
   z-index:6;
-
   top:calc(22px + env(safe-area-inset-top));
-
   left:25px;
-
   border:0;
-
   background:transparent;
-
   color:white;
-
   font:italic 19px Georgia,"Times New Roman",serif;
-
   letter-spacing:.08em;
-
   text-shadow:0 2px 12px rgba(0,0,0,.7);
-
 }
-
 .language-switch{
-
   position:absolute;
-
   z-index:6;
-
   top:calc(25px + env(safe-area-inset-top));
-
   right:25px;
-
   display:flex;
-
   gap:17px;
-
 }
-
 .language-switch button{
-
   padding:5px 0 9px;
-
   border:0;
-
   border-bottom:1px solid transparent;
-
   background:transparent;
-
   color:rgba(255,255,255,.7);
-
   font-size:11px;
-
   letter-spacing:.15em;
-
 }
-
 .language-switch button.active{
-
   color:white;
-
   border-bottom-color:white;
-
 }
-
 .visual-heading{
-
   position:absolute;
-
   top:calc(13% + env(safe-area-inset-top));
-
   left:5%;
-
   width:90%;
-
   margin:0;
-
   text-align:center;
-
   color:white;
-
   font-family:Georgia,"Times New Roman",serif;
-
   font-style:italic;
-
   font-weight:normal;
-
   font-size:clamp(19px,3.2vw,42px);
-
   line-height:1.5;
-
   letter-spacing:-.02em;
-
   text-shadow:0 2px 20px rgba(0,0,0,.6);
-
 }
-
 .visual-navigation{
-
   position:absolute;
-
   bottom:calc(8% + env(safe-area-inset-bottom));
-
   left:4%;
-
   width:92%;
-
   display:flex;
-
   justify-content:center;
-
   align-items:center;
-
   flex-wrap:wrap;
-
   gap:clamp(15px,3vw,42px);
-
 }
-
 .visual-navigation button{
-
   padding:9px 0;
-
   border:0;
-
   border-bottom:1px solid transparent;
-
   background:transparent;
-
   color:white;
-
   font-size:clamp(10px,1.2vw,13px);
-
   letter-spacing:.16em;
-
   text-transform:uppercase;
-
   text-shadow:0 2px 10px rgba(0,0,0,.8);
-
 }
-
 .visual-navigation button:hover{
-
   border-bottom-color:white;
-
 }
-
 .visual-footer{
-
   position:absolute;
-
   bottom:calc(12px + env(safe-area-inset-bottom));
-
   left:0;
-
   width:100%;
-
   display:flex;
-
   justify-content:center;
-
   gap:16px;
-
 }
-
 .visual-footer button{
-
   border:0;
-
   background:transparent;
-
   color:rgba(255,255,255,.75);
-
   font-size:10px;
-
   letter-spacing:.1em;
-
   padding:5px 9px;
-
 }
 
-/* FULL-SCREEN CONTENT */
-
+/* OVERLAYS */
 .overlay{
-
   display:none;
-
   position:fixed;
-
   inset:0;
-
   z-index:100;
-
   overflow-y:auto;
-
   overscroll-behavior:contain;
-
   background:#080808;
-
   padding:
-
     calc(105px + env(safe-area-inset-top))
-
     24px
-
     calc(70px + env(safe-area-inset-bottom));
-
 }
-
 .overlay.open{display:block}
-
 .overlay-inner{
-
   max-width:1050px;
-
   margin:0 auto;
-
   animation:appear .3s ease both;
-
 }
-
 @keyframes appear{
-
   from{opacity:0;transform:translateY(8px)}
-
   to{opacity:1;transform:translateY(0)}
-
 }
-
 .close-overlay{
-
   display:none;
-
   position:fixed;
-
   z-index:110;
-
   top:calc(25px + env(safe-area-inset-top));
-
   right:26px;
-
   border:0;
-
   background:transparent;
-
   color:white;
-
   font-size:34px;
-
   line-height:1;
-
 }
-
 .close-overlay.visible{display:block}
-
 .section-kicker{
-
   color:#999;
-
   font-size:10px;
-
   letter-spacing:.22em;
-
   text-transform:uppercase;
-
   margin-bottom:17px;
-
 }
-
 .section-title{
-
   margin:0 0 28px;
-
   font:normal clamp(43px,8vw,83px)/1.08 Georgia,serif;
-
   letter-spacing:-.04em;
-
 }
-
 .section-intro{
-
   max-width:790px;
-
   margin:0 0 50px;
-
   color:#d1cdc8;
-
   font-size:clamp(16px,2vw,20px);
-
   line-height:1.8;
-
 }
-
 .body-copy{
-
   max-width:790px;
-
   color:#bdb9b4;
-
   font-size:15px;
-
   line-height:1.9;
-
 }
-
 .section-heading{
-
   margin:55px 0 25px;
-
   font:normal clamp(28px,4vw,43px) Georgia,serif;
-
 }
-
 .cards{
-
   display:grid;
-
   grid-template-columns:repeat(2,minmax(0,1fr));
-
   gap:15px;
-
 }
-
 .card{
-
   min-width:0;
-
   min-height:220px;
-
   display:flex;
-
   flex-direction:column;
-
   justify-content:space-between;
-
   padding:28px;
-
   border:1px solid var(--line);
-
   background:#111110;
-
 }
-
 .card-number{
-
   color:#777;
-
   font-size:10px;
-
   letter-spacing:.12em;
-
 }
-
 .card-title{
-
   margin:25px 0 12px;
-
   font:normal clamp(23px,3vw,31px)/1.2 Georgia,serif;
-
   overflow-wrap:anywhere;
-
 }
-
 .card-description{
-
   margin:0;
-
   color:#aaa6a0;
-
   font-size:13px;
-
   line-height:1.75;
-
 }
-
 .about-cards{
-
   grid-template-columns:repeat(3,minmax(0,1fr));
-
+}
+.about-cards .card{
+  justify-content:flex-end;
+}
+.about-cards .card-title{
+  margin-top:0;
 }
 
+/* PORTFOLIO — ONE FILTER */
 .filter-label{
-
   margin:30px 0 14px;
-
   color:#888;
-
   font-size:10px;
-
   letter-spacing:.17em;
-
   text-transform:uppercase;
-
 }
-
 .filter-bar{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:9px;
-
-  margin-bottom:30px;
-
-}
-
-.filter-bar button{
-
-  padding:11px 13px;
-
-  border:1px solid #494643;
-
-  background:transparent;
-
-  color:#bbb;
-
-  font-size:11px;
-
-}
-
-.filter-bar button.active{
-
-  color:#080808;
-
-  background:#eee;
-
-  border-color:#eee;
-
-}
-
-.primary-filters{
-
   display:grid;
-
   grid-template-columns:repeat(4,minmax(0,1fr));
-
+  gap:9px;
+  margin-bottom:30px;
 }
-
-.primary-filters button{min-height:55px}
-
-.portfolio-card[hidden]{display:none}
-
-.project-status{
-
-  display:block;
-
-  margin-top:17px;
-
-  color:#aaa;
-
-  font-size:10px;
-
-  text-transform:uppercase;
-
-  letter-spacing:.1em;
-
-}
-
-.results-count{
-
-  margin:0 0 20px;
-
-  color:#999;
-
-  font-size:12px;
-
-}
-
-.contact-links{
-
-  display:flex;
-
-  flex-direction:column;
-
-  max-width:800px;
-
-}
-
-.contact-links a{
-
-  padding:24px 0;
-
-  border-bottom:1px solid var(--line);
-
-  color:var(--fg);
-
-  text-decoration:none;
-
-  font:normal clamp(21px,4vw,35px) Georgia,serif;
-
-  overflow-wrap:anywhere;
-
-}
-
-.legal-links{
-
-  display:flex;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-
-  margin-top:65px;
-
-}
-
-.legal-links button{
-
-  border:0;
-
+.filter-bar button{
+  min-height:55px;
+  padding:11px 13px;
+  border:1px solid #494643;
   background:transparent;
-
-  color:#aaa;
-
-  padding:5px 0;
-
-  font-size:12px;
-
+  color:#bbb;
+  font-size:11px;
 }
-
-.privacy-block{
-
-  border-top:1px solid var(--line);
-
-  padding:24px 0;
-
-  max-width:850px;
-
+.filter-bar button.active{
+  color:#080808;
+  background:#eee;
+  border-color:#eee;
 }
-
-.privacy-block h2{
-
-  margin:0 0 15px;
-
-  font:normal clamp(21px,3vw,28px) Georgia,serif;
-
-}
-
-.privacy-block p{
-
-  color:#bdb9b4;
-
-  font-size:14px;
-
-  line-height:1.9;
-
-  overflow-wrap:anywhere;
-
-}
-
-.privacy-block a{
-
-  color:#eee;
-
-  text-underline-offset:4px;
-
-}
-
-.privacy-note{
-
+.portfolio-card[hidden]{display:none}
+.results-count{
+  margin:0 0 20px;
   color:#999;
-
   font-size:12px;
+}
+.project-status{
+  display:block;
+  margin-top:17px;
+  color:#aaa;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
 
+/* COMPACT CONTACT LINKS */
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  max-width:650px;
+  margin-top:32px;
+  gap:8px;
+}
+.contact-link{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  min-height:57px;
+  padding:13px 16px;
+  border:1px solid #34312f;
+  background:#111110;
+  color:#eee;
+  text-decoration:none;
+  font-size:14px;
+  line-height:1.5;
+  transition:background .2s,border-color .2s;
+}
+.contact-link:hover{
+  background:#1c191d;
+  border-color:#756083;
+}
+.contact-icon{
+  flex:0 0 23px;
+  width:23px;
+  height:23px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.contact-icon svg{
+  width:20px;
+  height:20px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.contact-text{
+  flex:1;
+  overflow-wrap:anywhere;
+}
+.contact-arrow{
+  color:#777;
+  font-size:16px;
+}
+.legal-links{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:65px;
+}
+.legal-links button{
+  border:0;
+  background:transparent;
+  color:#aaa;
+  padding:5px 0;
+  font-size:12px;
+}
+.privacy-block{
+  border-top:1px solid var(--line);
+  padding:24px 0;
+  max-width:850px;
+}
+.privacy-block h2{
+  margin:0 0 15px;
+  font:normal clamp(21px,3vw,28px) Georgia,serif;
+}
+.privacy-block p{
+  color:#bdb9b4;
+  font-size:14px;
+  line-height:1.9;
+  overflow-wrap:anywhere;
+}
+.privacy-block a{
+  color:#eee;
+  text-underline-offset:4px;
+}
+.privacy-note{
+  color:#999;
+  font-size:12px;
   margin-bottom:35px;
-
+}
+.legal-pending{
+  border:1px solid #49413c;
+  padding:17px 19px;
+  margin:20px 0 38px;
+  color:#c7bbb4;
+  font-size:13px;
+  line-height:1.7;
 }
 
 @media(max-width:650px){
-
   .logo-entry{width:96vw}
-
   .return-logo{
-
     left:15px;
-
     font-size:15px;
-
   }
-
   .language-switch{
-
     right:15px;
-
     gap:12px;
-
   }
-
   .visual-heading{
-
     top:calc(16% + env(safe-area-inset-top));
-
     left:6%;
-
     width:88%;
-
     font-size:clamp(20px,5vw,28px);
-
     line-height:1.6;
-
   }
-
   .visual-navigation{
-
     bottom:calc(9% + env(safe-area-inset-bottom));
-
     left:3%;
-
     width:94%;
-
     gap:8px 18px;
-
   }
-
   .visual-navigation button{
-
     font-size:clamp(9px,2.4vw,11px);
-
     letter-spacing:.11em;
-
   }
-
   .cards{grid-template-columns:1fr}
-
   .about-cards{
-
     grid-template-columns:repeat(3,minmax(0,1fr));
-
     gap:7px;
-
   }
-
   .about-cards .card{
-
     padding:12px 8px;
-
-    min-height:195px;
-
+    min-height:170px;
   }
-
   .about-cards .card-title{
-
     font-size:clamp(12px,3.2vw,17px);
-
   }
-
   .about-cards .card-description{
-
     font-size:10px;
-
     line-height:1.5;
-
   }
-
-  .primary-filters{
-
+  .filter-bar{
     grid-template-columns:repeat(2,minmax(0,1fr));
-
   }
-
   .overlay{
-
     padding:
-
       calc(105px + env(safe-area-inset-top))
-
       20px
-
       calc(65px + env(safe-area-inset-bottom));
-
   }
-
+  .contact-link{font-size:13px}
 }
-
 @media(prefers-reduced-motion:reduce){
-
   .logo-entry,
-
   .logo-entry img,
-
   .logo-entry::before,
-
   .intro.entering .logo-entry{
-
     animation:none;
-
   }
-
   .scene{transition:none}
-
   .overlay-inner{animation:none}
-
 }
-
 </style>
-
 </head>
 
 <body>
-
 <main class="site" id="home">
 
   <section class="scene intro" id="intro" aria-label="Enter VARDAPET">
-
     <img
-
       class="intro-photo"
-
       src="night-sky.png"
-
       alt="Starry night sky"
-
     >
-
     <button
-
       class="logo-entry"
-
       id="enterSite"
-
       type="button"
-
       aria-label="Enter VARDAPET"
-
     >
-
       <img src="logo.PNG" alt="VARDAPET">
-
     </button>
-
   </section>
 
   <section class="scene visual" id="visual" aria-hidden="true">
-
     <img
-
       class="visual-photo"
-
       src="bg.jpeg.jpg"
-
       alt="VARDAPET artistic photograph"
-
     >
 
     <button
-
       class="return-logo"
-
       id="returnIntro"
-
       type="button"
-
-      aria-label="Return to VARDAPET introduction"
-
+      aria-label="Return to introduction"
     >VARDAPET</button>
 
     <div class="language-switch" aria-label="Language">
-
       <button type="button" data-lang="en" class="active">EN</button>
-
       <button type="button" data-lang="de">DE</button>
-
       <button type="button" data-lang="ru">RU</button>
-
     </div>
 
     <h1 class="visual-heading" id="roles"></h1>
 
     <nav
-
       class="visual-navigation"
-
       id="navigation"
-
       aria-label="Main navigation"
-
     ></nav>
 
     <div class="visual-footer">
-
       <button type="button" id="privacyFooter">Privacy Policy</button>
-
       <button type="button" id="imprintFooter">Impressum</button>
-
     </div>
-
   </section>
 
 </main>
 
 <button
-
   class="close-overlay"
-
   id="closeOverlay"
-
   type="button"
-
   aria-label="Close"
-
 >×</button>
 
 <section
-
   class="overlay"
-
   id="overlay"
-
   role="dialog"
-
   aria-modal="true"
-
   aria-label="VARDAPET"
-
 >
-
   <div class="overlay-inner" id="overlayContent"></div>
-
 </section>
 
 <script>
-
 const CONTACT={
-
   instagram:"https://www.instagram.com/vardapet_/",
-
   email:"petrosyanvardui@gmail.com",
-
   phone:"+49 157 33273797",
-
   tel:"+4915733273797"
-
 };
 
 const CONTENT={
-
   en:{
-
     roles:"DIRECTOR · DIGITAL CREATOR · CULTURAL RESEARCHER",
-
     nav:{
-
       about:"ABOUT",
-
       portfolio:"PORTFOLIO",
-
       research:"RESEARCH",
-
       collaborations:"COLLABORATIONS",
-
       contact:"CONTACT"
-
     },
-
     privacyLabel:"Privacy Policy",
-
     about:{
-
-      kicker:"Independent Artistic Practice",
-
+      kicker:"",
       title:"About",
-
       intro:"VARDAPET is the independent multidisciplinary artistic identity of Vardui Petrosyan, bringing together film direction, digital creation and cultural research.",
-
-      body:"Rooted in a multicultural heritage and shaped by experiences across Siberia, Europe and the United States, this artistic practice explores personal identity, collective memory and cultural expression. Germany, where Vardui has lived and studied for approximately a decade, is an integral part of this perspective.",
-
+      body:"Rooted in Armenian cultural heritage and shaped by a cross-cultural journey from Siberia through Europe and the United States, this artistic practice explores personal identity, collective memory and cultural expression. Germany, where Vardui has lived and studied for approximately a decade, is an integral part of this perspective.",
       philosophy:"Identity, faith, memory, freedom and the human condition are recurring themes connecting visual work, research and original artistic projects.",
-
       heading:"Creative Practice",
-
       cards:[
-
         ["Direction","Author-driven film concepts, music visuals, experimental narratives and documentary development."],
-
         ["Digital Creation","Digital storytelling, audiovisual editing, visual experiments and AI-assisted creative methods."],
-
         ["Cultural Research","Research into cinema, music, philosophy, faith, history, identity and visual culture."]
-
       ]
-
     },
-
     portfolio:{
-
       kicker:"Selected Works & Artistic Development",
-
       title:"Portfolio",
-
       intro:"An evolving selection of original visual works, artistic concepts, photography, audiovisual experiments and projects in development.",
-
       roleLabel:"Creative Direction",
-
-      typeLabel:"Type of Work",
-
       roleFilters:{
-
         all:"All Works",
-
         direction:"Direction",
-
         digital:"Digital Creation",
-
         research:"Cultural Research"
-
       },
-
-      typeFilters:{
-
-        all:"All Types",
-
-        film:"Film",
-
-        music:"Music",
-
-        digital:"Digital Art",
-
-        photo:"Photography",
-
-        writing:"Writing",
-
-        development:"In Development"
-
-      },
-
       results:"Works displayed",
-
       items:[
-
-        ["Films & Directing","Author-driven films, short-form cinema, directing concepts and narrative work.","film",["direction"]],
-
-        ["Music Videos & Visualizers","Music-led audiovisual work, visualizers and experimental music imagery.","music",["direction","digital"]],
-
-        ["Experimental Film & Digital Art","Digital visual studies, experimental moving images and AI-assisted exploration.","digital",["direction","digital"]],
-
-        ["Photography","Original photographic work, portraits, spaces, landscapes and visual observations.","photo",["digital"]],
-
-        ["Travel & Cultural Visual Essays","Visual narratives shaped by travel, places, cultural encounters and observation.","photo",["digital","research"]],
-
-        ["Archive-Based Works","New visual narratives developed from an existing personal photography and video archive.","digital",["digital","research"]],
-
-        ["Writing & Artistic Concepts","Treatments, artistic concepts, scripts and original written explorations.","writing",["direction","research"]],
-
-        ["Seven Chapters of Freedom","An original interdisciplinary artistic cycle exploring freedom, faith, transformation and the human condition.","development",["direction","digital","research"],"In development"],
-
-        ["Documentary & Original Projects","Independent documentary and narrative projects exploring cultural history, memory and identity.","development",["direction","research"],"In development"]
-
+        ["Films & Directing","Author-driven films, short-form cinema, directing concepts and narrative work.",["direction"]],
+        ["Music Videos & Visualizers","Music-led audiovisual work, visualizers and experimental music imagery.",["direction","digital"]],
+        ["Experimental Film & Digital Art","Digital visual studies, experimental moving images and AI-assisted exploration.",["direction","digital"]],
+        ["Photography","Original photographic work, portraits, spaces, landscapes and visual observations.",["digital"]],
+        ["Travel & Cultural Visual Essays","Visual narratives shaped by travel, places, cultural encounters and observation.",["digital","research"]],
+        ["Archive-Based Works","New visual narratives developed from an existing personal photography and video archive.",["digital","research"]],
+        ["Writing & Artistic Concepts","Treatments, artistic concepts, scripts and original written explorations.",["direction","research"]],
+        ["Seven Chapters of Freedom","An original interdisciplinary artistic cycle exploring freedom, faith, transformation and the human condition.",["direction","digital","research"],"In development"],
+        ["Documentary & Original Projects","Independent documentary and narrative projects exploring cultural history, memory and identity.",["direction","research"],"In development"]
       ]
-
     },
-
     research:{
-
-      kicker:"Cultural Investigations",
-
+      kicker:"",
       title:"Research",
-
       intro:"An ongoing exploration of cultural expression, artistic languages, historical memory and the philosophical questions behind images and stories.",
-
       cards:[
-
         ["Cinema & Visual Culture","Film language, direction, symbolism, editing, visual references and the cultural history of moving images."],
-
         ["Music & Cultural Expression","Music videos, artist identities, genres, performance, fashion and music as a cultural phenomenon."],
-
         ["Philosophy & The Human Condition","Freedom, ethics, human existence, identity and philosophical approaches to the human condition."],
-
         ["Faith & Sacred Heritage","Christian traditions, sacred architecture, Armenian and Orthodox heritage, religious symbolism and spiritual culture."],
-
         ["Memory, Identity & History","Personal and collective memory, migration, cultural belonging, family history and disappearing places."],
-
         ["Archives & Visual Experiments","Cultural references, archival research, digital collage and experimental methods of visual interpretation."]
-
       ]
-
     },
-
     collaborations:{
-
       kicker:"Creative Practice & Partnerships",
-
       title:"Collaborations",
-
       intro:"Open to selected artistic collaborations, original commissions, research-led productions and interdisciplinary partnerships.",
-
       cards:[
-
         ["Film Direction & Music Visuals","Creative concepts and direction for music videos, artist films, visualizers, short films and experimental audiovisual projects."],
-
         ["Creative Direction & Artistic Campaigns","Distinctive visual concepts, treatments, visual worlds, brand films and artistic campaigns."],
-
         ["Digital Storytelling & Creative Production","Audiovisual narratives, creative editing, postproduction, digital art and experimental formats."],
-
         ["Cultural Research & Editorial Projects","Research-based storytelling, essays, treatments, scripts and editorial or cultural concepts."],
-
         ["Photography & Archive Licensing","Original photography and selected archival visual material, subject to availability and rights clearance."],
-
         ["Artistic Partnerships","Collaborations with musicians, artists, filmmakers, cultural institutions and independent creative practitioners."],
-
         ["Documentary & Research-Based Projects","Independent documentary development, cultural heritage projects and potential institutional partnerships."]
-
       ]
-
     },
-
     contact:{
-
       kicker:"Inquiries & Connections",
-
       title:"Contact",
-
       intro:"For artistic collaborations, cultural projects, professional inquiries and creative exchange.",
-
-      location:"Based in Germany · International perspective"
-
+      location:"Based in Germany · International Perspective"
     }
-
   },
 
   de:{
-
     roles:"REGISSEURIN · DIGITAL CREATOR · KULTURFORSCHERIN",
-
     nav:{
-
       about:"ÜBER MICH",
-
       portfolio:"PORTFOLIO",
-
       research:"RESEARCH",
-
       collaborations:"KOLLABORATIONEN",
-
       contact:"KONTAKT"
-
     },
-
     privacyLabel:"Datenschutz",
-
     about:{
-
-      kicker:"Unabhängige künstlerische Praxis",
-
+      kicker:"",
       title:"Über mich",
-
       intro:"VARDAPET ist die unabhängige, multidisziplinäre künstlerische Identität von Vardui Petrosyan. Sie verbindet Filmregie, digitale Gestaltung und kulturelle Forschung.",
-
-      body:"Geprägt von einem multikulturellen Hintergrund und Erfahrungen in Sibirien, Europa und den Vereinigten Staaten, beschäftigt sich diese künstlerische Praxis mit persönlicher Identität, kollektivem Gedächtnis und kulturellem Ausdruck. Deutschland, wo Vardui seit ungefähr einem Jahrzehnt lebt und studiert hat, ist ein wesentlicher Teil dieser Perspektive.",
-
+      body:"Verwurzelt im armenischen Kulturerbe und geprägt von einer interkulturellen Reise von Sibirien durch Europa und die Vereinigten Staaten, beschäftigt sich diese künstlerische Praxis mit persönlicher Identität, kollektivem Gedächtnis und kulturellem Ausdruck. Deutschland, wo Vardui seit ungefähr einem Jahrzehnt lebt und studiert hat, ist ein wesentlicher Teil dieser Perspektive.",
       philosophy:"Identität, Glaube, Erinnerung, Freiheit und die Conditio humana verbinden ihre visuellen Arbeiten, Recherchen und eigenen künstlerischen Projekte.",
-
       heading:"Künstlerische Praxis",
-
       cards:[
-
         ["Regie","Autorengeführte Filmkonzepte, Musikvisuals, experimentelle Erzählformen und dokumentarische Projektentwicklung."],
-
         ["Digitale Gestaltung","Digital Storytelling, audiovisueller Schnitt, visuelle Experimente und KI-gestützte kreative Methoden."],
-
         ["Kulturforschung","Recherche zu Film, Musik, Philosophie, Glauben, Geschichte, Identität und visueller Kultur."]
-
       ]
-
     },
-
     portfolio:{
-
       kicker:"Ausgewählte Arbeiten & Projektentwicklung",
-
       title:"Portfolio",
-
       intro:"Eine wachsende Auswahl eigener visueller Arbeiten, künstlerischer Konzepte, Fotografien, audiovisueller Experimente und Projekte in Entwicklung.",
-
       roleLabel:"Künstlerische Bereiche",
-
-      typeLabel:"Art der Arbeit",
-
       roleFilters:{
-
         all:"Alle Arbeiten",
-
         direction:"Regie",
-
         digital:"Digitale Gestaltung",
-
         research:"Kulturforschung"
-
       },
-
-      typeFilters:{
-
-        all:"Alle Arten",
-
-        film:"Film",
-
-        music:"Musik",
-
-        digital:"Digitale Kunst",
-
-        photo:"Fotografie",
-
-        writing:"Texte",
-
-        development:"In Entwicklung"
-
-      },
-
       results:"Angezeigte Arbeiten",
-
       items:[
-
-        ["Film & Regie","Eigene Filmprojekte, Kurzfilmkonzepte und narrative Arbeiten.","film",["direction"]],
-
-        ["Musikvideos & Visualizer","Musikbezogene audiovisuelle Arbeiten und experimentelle Bildwelten.","music",["direction","digital"]],
-
-        ["Experimentalfilm & Digitale Kunst","Digitale Bildstudien, experimentelle Bewegtbilder und KI-gestützte Experimente.","digital",["direction","digital"]],
-
-        ["Fotografie","Eigene Fotografien, Porträts, Räume, Landschaften und visuelle Beobachtungen.","photo",["digital"]],
-
-        ["Reisen & Kulturelle Bildessays","Visuelle Erzählungen über Orte, Reisen, kulturelle Begegnungen und Beobachtungen.","photo",["digital","research"]],
-
-        ["Archivbasierte Arbeiten","Neue visuelle Erzählungen aus dem eigenen Foto- und Videoarchiv.","digital",["digital","research"]],
-
-        ["Texte & Künstlerische Konzepte","Treatments, Drehbuchideen, künstlerische Konzepte und eigene Texte.","writing",["direction","research"]],
-
-        ["Seven Chapters of Freedom","Ein interdisziplinärer künstlerischer Zyklus über Freiheit, Glauben, Transformation und menschliche Existenz.","development",["direction","digital","research"],"In Entwicklung"],
-
-        ["Dokumentarische & Eigene Projekte","Unabhängige dokumentarische und fiktionale Vorhaben zu Kulturgeschichte, Erinnerung und Identität.","development",["direction","research"],"In Entwicklung"]
-
+        ["Film & Regie","Eigene Filmprojekte, Kurzfilmkonzepte und narrative Arbeiten.",["direction"]],
+        ["Musikvideos & Visualizer","Musikbezogene audiovisuelle Arbeiten und experimentelle Bildwelten.",["direction","digital"]],
+        ["Experimentalfilm & Digitale Kunst","Digitale Bildstudien, experimentelle Bewegtbilder und KI-gestützte Experimente.",["direction","digital"]],
+        ["Fotografie","Eigene Fotografien, Porträts, Räume, Landschaften und visuelle Beobachtungen.",["digital"]],
+        ["Reisen & Kulturelle Bildessays","Visuelle Erzählungen über Orte, Reisen, kulturelle Begegnungen und Beobachtungen.",["digital","research"]],
+        ["Archivbasierte Arbeiten","Neue visuelle Erzählungen aus dem eigenen Foto- und Videoarchiv.",["digital","research"]],
+        ["Texte & Künstlerische Konzepte","Treatments, Drehbuchideen, künstlerische Konzepte und eigene Texte.",["direction","research"]],
+        ["Seven Chapters of Freedom","Ein interdisziplinärer künstlerischer Zyklus über Freiheit, Glauben, Transformation und menschliche Existenz.",["direction","digital","research"],"In Entwicklung"],
+        ["Dokumentarische & Eigene Projekte","Unabhängige dokumentarische und fiktionale Vorhaben zu Kulturgeschichte, Erinnerung und Identität.",["direction","research"],"In Entwicklung"]
       ]
-
     },
-
     research:{
-
-      kicker:"Kulturelle Untersuchungen",
-
+      kicker:"",
       title:"Research",
-
       intro:"Eine fortlaufende Auseinandersetzung mit kulturellem Ausdruck, künstlerischen Sprachen, historischem Gedächtnis und philosophischen Fragen hinter Bildern und Geschichten.",
-
       cards:[
-
         ["Film & Visuelle Kultur","Filmsprache, Regie, Symbolik, Montage, visuelle Referenzen und Kulturgeschichte des bewegten Bildes."],
-
         ["Musik & Kultureller Ausdruck","Musikvideos, Künstleridentitäten, Genres, Performance, Mode und Musik als kulturelles Phänomen."],
-
         ["Philosophie & Conditio humana","Freiheit, Ethik, Existenz, Identität und philosophische Perspektiven auf das Menschsein."],
-
         ["Glaube & Sakrales Erbe","Christliche Traditionen, sakrale Architektur, armenisches und orthodoxes Erbe sowie religiöse Symbolik."],
-
         ["Erinnerung, Identität & Geschichte","Persönliches und kollektives Gedächtnis, Migration, Zugehörigkeit, Familiengeschichte und verschwindende Orte."],
-
         ["Archive & Visuelle Experimente","Kulturelle Referenzen, Archivrecherche, digitale Collagen und experimentelle visuelle Interpretation."]
-
       ]
-
     },
-
     collaborations:{
-
       kicker:"Kreative Praxis & Partnerschaften",
-
       title:"Kollaborationen",
-
       intro:"Offen für ausgewählte künstlerische Kooperationen, individuelle Auftragsprojekte, recherchierte Produktionen und interdisziplinäre Partnerschaften.",
-
       cards:[
-
         ["Filmregie & Musikvisuals","Konzeption und Regie für Musikvideos, Artist Films, Visualizer, Kurzfilme und experimentelle audiovisuelle Projekte."],
-
         ["Creative Direction & Künstlerische Kampagnen","Eigenständige visuelle Konzepte, Treatments, Bildwelten, Brand Films und künstlerische Kampagnen."],
-
         ["Digital Storytelling & Kreative Produktion","Audiovisuelle Erzählformen, kreativer Schnitt, Postproduktion, digitale Kunst und experimentelle Formate."],
-
         ["Kulturforschung & Redaktionelle Projekte","Recherchebasierte Erzählformen, Essays, Treatments, Drehbücher und kulturelle Konzepte."],
-
         ["Fotografie & Archivlizenzen","Eigene Fotografien und ausgewähltes Archivmaterial nach Verfügbarkeit und Klärung der Nutzungsrechte."],
-
         ["Künstlerische Partnerschaften","Zusammenarbeit mit Musikerinnen und Musikern, Kunstschaffenden, Filmschaffenden und Kulturinstitutionen."],
-
         ["Dokumentarische & Forschungsbasierte Projekte","Dokumentarische Projektentwicklung, Kulturerbeprojekte und mögliche institutionelle Partnerschaften."]
-
       ]
-
     },
-
     contact:{
-
       kicker:"Anfragen & Austausch",
-
       title:"Kontakt",
-
       intro:"Für künstlerische Kooperationen, kulturelle Projekte, berufliche Anfragen und kreativen Austausch.",
-
       location:"Deutschland · Internationale Perspektive"
-
     }
-
   },
 
   ru:{
-
     roles:"РЕЖИССЁР · АВТОР МЕДИАПРОЕКТОВ · ИССЛЕДОВАТЕЛЬ КУЛЬТУРЫ",
-
     nav:{
-
       about:"ОБО МНЕ",
-
       portfolio:"ПОРТФОЛИО",
-
       research:"ИССЛЕДОВАНИЯ",
-
       collaborations:"СОТРУДНИЧЕСТВО",
-
       contact:"КОНТАКТЫ"
-
     },
-
     privacyLabel:"Конфиденциальность",
-
     about:{
-
-      kicker:"Независимая художественная практика",
-
+      kicker:"",
       title:"Обо мне",
-
       intro:"VARDAPET — независимая междисциплинарная художественная идентичность Вардуи Петросян, объединяющая режиссуру, цифровое творчество и культурные исследования.",
-
-      body:"Эта практика сформировалась под влиянием многокультурного наследия и жизненного опыта в Сибири, Европе и США. Она обращается к взаимосвязи личной идентичности, коллективной памяти и культурного самовыражения. Германия, где Вардуи живёт и получила образование, стала неотъемлемой частью её личной и культурной перспективы.",
-
+      body:"Укоренённая в армянском культурном наследии и сформированная межкультурным путешествием из Сибири через Европу и США, эта практика обращается к личной идентичности, коллективной памяти и культурному самовыражению. Германия, где Вардуи живёт и получила образование, стала неотъемлемой частью её личной и культурной перспективы.",
       philosophy:"Идентичность, вера, память, свобода и человеческий удел — повторяющиеся темы, связывающие визуальные работы, исследования и самостоятельные художественные проекты.",
-
       heading:"Творческая практика",
-
       cards:[
-
         ["Режиссура","Авторские киноконцепции, музыкальные визуальные проекты, экспериментальные повествования и документальное кино."],
-
         ["Цифровое творчество","Цифровой сторителлинг, аудиовизуальный монтаж, визуальные эксперименты и творческие методы с использованием ИИ."],
-
         ["Культурные исследования","Исследования кино, музыки, философии, веры, истории, идентичности и визуальной культуры."]
-
       ]
-
     },
-
     portfolio:{
-
       kicker:"Избранные работы и художественные проекты",
-
       title:"Портфолио",
-
       intro:"Развивающаяся коллекция авторских визуальных работ, художественных концепций, фотографий, аудиовизуальных экспериментов и проектов в разработке.",
-
       roleLabel:"Направления творчества",
-
-      typeLabel:"Вид работы",
-
       roleFilters:{
-
         all:"Все работы",
-
         direction:"Режиссура",
-
         digital:"Цифровое творчество",
-
         research:"Культурные исследования"
-
       },
-
-      typeFilters:{
-
-        all:"Все виды",
-
-        film:"Кино",
-
-        music:"Музыка",
-
-        digital:"Цифровое искусство",
-
-        photo:"Фотография",
-
-        writing:"Тексты",
-
-        development:"В разработке"
-
-      },
-
       results:"Показано работ",
-
       items:[
-
-        ["Кино и режиссура","Авторские фильмы, короткометражные проекты, режиссёрские концепции и визуальные повествования.","film",["direction"]],
-
-        ["Музыкальные клипы и визуалайзеры","Музыкальные аудиовизуальные работы и экспериментальные визуальные образы.","music",["direction","digital"]],
-
-        ["Экспериментальное кино и цифровое искусство","Цифровые визуальные исследования, движущиеся изображения и эксперименты с ИИ.","digital",["direction","digital"]],
-
-        ["Фотография","Авторские фотографии, портреты, пространства, пейзажи и визуальные наблюдения.","photo",["digital"]],
-
-        ["Путешествия и культурные визуальные эссе","Визуальные истории о местах, путешествиях, культурных встречах и наблюдениях.","photo",["digital","research"]],
-
-        ["Работы на основе архива","Новые визуальные истории на основе собственного многолетнего фото- и видеоархива.","digital",["digital","research"]],
-
-        ["Тексты и художественные концепции","Сценарии, авторские тексты, художественные концепции и разработки.","writing",["direction","research"]],
-
-        ["Seven Chapters of Freedom","Авторский междисциплинарный цикл о свободе, вере, преображении и человеческом уделе.","development",["direction","digital","research"],"В разработке"],
-
-        ["Документальные и авторские проекты","Независимые документальные и художественные проекты о культурной истории, памяти и идентичности.","development",["direction","research"],"В разработке"]
-
+        ["Кино и режиссура","Авторские фильмы, короткометражные проекты, режиссёрские концепции и визуальные повествования.",["direction"]],
+        ["Музыкальные клипы и визуалайзеры","Музыкальные аудиовизуальные работы и экспериментальные визуальные образы.",["direction","digital"]],
+        ["Экспериментальное кино и цифровое искусство","Цифровые визуальные исследования, движущиеся изображения и эксперименты с ИИ.",["direction","digital"]],
+        ["Фотография","Авторские фотографии, портреты, пространства, пейзажи и визуальные наблюдения.",["digital"]],
+        ["Путешествия и культурные визуальные эссе","Визуальные истории о местах, путешествиях, культурных встречах и наблюдениях.",["digital","research"]],
+        ["Работы на основе архива","Новые визуальные истории на основе собственного многолетнего фото- и видеоархива.",["digital","research"]],
+        ["Тексты и художественные концепции","Сценарии, авторские тексты, художественные концепции и разработки.",["direction","research"]],
+        ["Seven Chapters of Freedom","Авторский междисциплинарный цикл о свободе, вере, преображении и человеческом уделе.",["direction","digital","research"],"В разработке"],
+        ["Документальные и авторские проекты","Независимые документальные и художественные проекты о культурной истории, памяти и идентичности.",["direction","research"],"В разработке"]
       ]
-
     },
-
     research:{
-
-      kicker:"Исследования культуры",
-
+      kicker:"",
       title:"Исследования",
-
       intro:"Исследование культурного самовыражения, художественных языков, исторической памяти и философских вопросов, стоящих за образами и историями.",
-
       cards:[
-
         ["Кино и визуальная культура","Киноязык, режиссура, символика, монтаж, визуальные референсы и культурная история движущегося изображения."],
-
         ["Музыка и культурное самовыражение","Музыкальные клипы, идентичность артистов, жанры, перформанс, мода и музыка как культурное явление."],
-
         ["Философия и удел человеческий","Свобода, этика, существование, идентичность и философские представления о человеческом уделе."],
-
         ["Вера и сакральное наследие","Христианские традиции, сакральная архитектура, армянское и православное наследие, религиозная символика."],
-
         ["Память, идентичность и история","Личная и коллективная память, миграция, культурная принадлежность, семейная история и исчезающие места."],
-
         ["Архивы и визуальные эксперименты","Культурные референсы, архивные исследования, цифровой коллаж и экспериментальные методы интерпретации."]
-
       ]
-
     },
-
     collaborations:{
-
       kicker:"Творческая практика и партнёрства",
-
       title:"Сотрудничество",
-
       intro:"Открыта к избранным творческим коллаборациям, авторским заказам, исследовательским проектам и междисциплинарному сотрудничеству.",
-
       cards:[
-
         ["Режиссура и музыкальные визуальные проекты","Концепции и режиссура музыкальных клипов, artist films, визуалайзеров, короткометражных и экспериментальных проектов."],
-
         ["Креативное руководство и художественные кампании","Оригинальные визуальные концепции, treatments, художественные рекламные фильмы и авторские кампании."],
-
         ["Цифровой сторителлинг и творческое производство","Аудиовизуальные истории, креативный монтаж, постпродакшн, цифровое искусство и экспериментальные форматы."],
-
         ["Культурные исследования и редакционные проекты","Исследовательский сторителлинг, эссе, сценарии, treatments и культурные концепции."],
-
         ["Фотография и лицензирование архива","Авторская фотография и отдельные архивные материалы при наличии и подтверждении прав использования."],
-
         ["Художественные партнёрства","Совместные проекты с музыкантами, художниками, режиссёрами, независимыми авторами и культурными институциями."],
-
         ["Документальные и исследовательские проекты","Разработка документальных фильмов, проекты культурного наследия и потенциальные институциональные партнёрства."]
-
       ]
-
     },
-
     contact:{
-
       kicker:"Связь и предложения",
-
       title:"Контакты",
-
       intro:"Для художественных коллабораций, культурных проектов, профессиональных предложений и творческого обмена.",
-
       location:"Германия · Международные проекты"
-
     }
-
   }
-
 };
 
 const PRIVACY={
-
   de:{
-
     kicker:"Rechtliche Informationen",
-
     title:"Datenschutzerklärung",
-
     intro:"Informationen zur Verarbeitung personenbezogener Daten auf VARDAPET.DE.",
-
     updated:"Stand: 22. Oktober 2026",
-
     sections:[
-
       ["1. Verantwortliche Person",[
-
         "Vardui Petrosyan — VARDAPET",
-
         "Deutschland",
-
         "E-Mail: petrosyanvardui@gmail.com",
-
         "Telefon: +49 157 33273797",
-
         "Die postalische Anschrift wird vor der endgültigen rechtlichen Veröffentlichung ergänzt."
-
       ]],
-
       ["2. Allgemeine Hinweise und Rechtsgrundlagen",[
-
         "Personenbezogene Daten sind Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.",
-
         "Die Verarbeitung erfolgt insbesondere auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur Gewährleistung des sicheren Websitebetriebs und zur Bearbeitung allgemeiner Anfragen sowie Art. 6 Abs. 1 lit. b DSGVO bei angefragten vorvertraglichen Maßnahmen."
-
       ]],
-
       ["3. Hosting und Server-Logfiles",[
-
         "Diese Website wird über GitHub Pages bereitgestellt. Bei einem Aufruf können technische Verbindungsdaten wie IP-Adresse, Zeitpunkt, Browserinformationen und angeforderte Ressourcen verarbeitet werden.",
-
         "Die Verarbeitung dient der Bereitstellung und Sicherheit der Website. Rechtsgrundlage für die durch die Websitebetreiberin veranlasste Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
-
         "Auf die konkreten Speicherfristen von GitHub-Serverprotokollen hat die Betreiberin keinen unmittelbaren Einfluss.",
-
         "Weitere Informationen: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
-
         "Eine Verarbeitung außerhalb des Europäischen Wirtschaftsraums, insbesondere in den USA, kann stattfinden. Informationen über Übermittlungen und Schutzmechanismen finden sich in der GitHub-Datenschutzerklärung."
-
       ]],
-
       ["4. Cookies und Analysewerkzeuge",[
-
         "In der aktuellen Konfiguration setzt VARDAPET.DE keine eigenen Tracking-Cookies und bindet weder Google Analytics noch Meta Pixel oder vergleichbare Analysewerkzeuge ein.",
-
         "Es werden derzeit keine Werbetracking- oder Newsletter-Dienste betrieben. Bei zukünftigen Änderungen wird diese Erklärung angepasst."
-
       ]],
-
       ["5. Kontaktaufnahme",[
-
         "Bei einer Kontaktaufnahme per E-Mail oder Telefon werden die freiwillig übermittelten Daten zur Bearbeitung der Anfrage verarbeitet.",
-
         "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO für allgemeine Anfragen oder Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen Maßnahmen.",
-
         "Die Daten werden nur so lange aufbewahrt, wie dies für die Bearbeitung erforderlich ist, sofern keine gesetzlichen Aufbewahrungspflichten bestehen."
-
       ]],
-
       ["6. Externe Links und Instagram",[
-
         "Die Website enthält einen Link zu Instagram. Instagram-Inhalte sind derzeit nicht eingebettet.",
-
         "Beim Aufruf externer Websites gelten die Datenschutzhinweise der jeweiligen Anbieter.",
-
         "Weitere Informationen: https://privacycenter.instagram.com/policy/"
-
       ]],
-
       ["7. Empfänger und Speicherdauer",[
-
         "Personenbezogene Daten können abhängig vom jeweiligen Vorgang durch Hosting-, E-Mail- oder Telekommunikationsanbieter verarbeitet werden.",
-
         "Personenbezogene Daten werden nicht an Werbetreibende verkauft.",
-
         "Die Speicherdauer richtet sich nach Verarbeitungszweck, gesetzlichen Pflichten und den Regelungen beteiligter Dienstleister."
-
       ]],
-
       ["8. Ihre Rechte",[
-
         "Im Rahmen der gesetzlichen Voraussetzungen bestehen Rechte auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21).",
-
         "Eine erteilte Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden.",
-
         "Kontakt: petrosyanvardui@gmail.com"
-
       ]],
-
       ["9. Beschwerderecht",[
-
         "Sie können sich bei einer zuständigen Datenschutzaufsichtsbehörde beschweren.",
-
         "Sächsische Datenschutz- und Transparenzbeauftragte: https://www.datenschutz.sachsen.de/"
-
       ]],
-
       ["10. Automatisierte Entscheidungen",[
-
         "Auf dieser Website findet derzeit keine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne des Art. 22 DSGVO statt."
-
       ]],
-
       ["11. Änderungen",[
-
         "Diese Datenschutzerklärung wird bei Änderungen der Website, eingesetzter Dienste oder rechtlicher Anforderungen aktualisiert."
-
       ]]
-
     ]
-
   },
-
   en:{
-
     kicker:"Legal Information",
-
     title:"Privacy Policy",
-
     intro:"Information about the processing of personal data on VARDAPET.DE.",
-
     updated:"Updated: 22 October 2026",
-
     sections:[
-
       ["1. Controller",[
-
         "Vardui Petrosyan — VARDAPET",
-
         "Germany",
-
         "Email: petrosyanvardui@gmail.com",
-
         "Telephone: +49 157 33273797",
-
         "The postal address will be added before final legal publication."
-
       ]],
-
       ["2. General information and legal bases",[
-
         "Personal data means information relating to an identified or identifiable natural person.",
-
         "Processing is based in particular on Article 6(1)(f) GDPR for the secure operation of the website and handling general inquiries, or Article 6(1)(b) GDPR for requested pre-contractual measures."
-
       ]],
-
       ["3. Hosting and server logs",[
-
         "This website uses GitHub Pages. Technical connection data such as IP addresses, access times, browser information and requested resources may be processed.",
-
         "The purpose is website delivery and security. The legal basis for processing attributable to the operator is Article 6(1)(f) GDPR.",
-
         "The operator does not control GitHub's server-log retention periods.",
-
         "Further information: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
-
         "Data may be processed outside the European Economic Area, including in the United States. GitHub provides information about transfers and safeguards in its privacy statement."
-
       ]],
-
       ["4. Cookies and analytics",[
-
         "In its current configuration, VARDAPET.DE does not intentionally set its own tracking cookies or integrate Google Analytics, Meta Pixel or similar analytics tools.",
-
         "There is currently no advertising tracking or newsletter service. This notice will be updated if services change."
-
       ]],
-
       ["5. Contact",[
-
         "Information voluntarily supplied by email or telephone is processed to handle the inquiry.",
-
         "The legal basis is Article 6(1)(f) GDPR for general inquiries or Article 6(1)(b) GDPR for requested pre-contractual measures.",
-
         "Data is retained only as necessary to handle the inquiry unless legal retention obligations apply."
-
       ]],
-
       ["6. External links and Instagram",[
-
         "This website links to Instagram but does not currently embed Instagram content.",
-
         "External websites are subject to their providers' privacy policies.",
-
         "Further information: https://privacycenter.instagram.com/policy/"
-
       ]],
-
       ["7. Recipients and retention",[
-
         "Depending on the processing activity, hosting, email and telecommunications providers may process personal data.",
-
         "Personal data is not sold to advertisers.",
-
         "Retention depends on the purpose, legal obligations and relevant service providers' policies."
-
       ]],
-
       ["8. Your rights",[
-
         "Subject to legal requirements, you have rights of access (Article 15 GDPR), rectification (16), erasure (17), restriction (18), portability (20) and objection (21).",
-
         "Consent may be withdrawn at any time with future effect.",
-
         "Contact: petrosyanvardui@gmail.com"
-
       ]],
-
       ["9. Complaints",[
-
         "You may lodge a complaint with a competent data protection supervisory authority.",
-
         "Saxony's supervisory authority: https://www.datenschutz.sachsen.de/"
-
       ]],
-
       ["10. Automated decisions",[
-
         "The website does not currently use automated decision-making or profiling under Article 22 GDPR."
-
       ]],
-
       ["11. Changes",[
-
         "This notice may be updated when the website, services or legal requirements change."
-
       ]]
-
     ]
-
   },
-
   ru:{
-
     kicker:"Юридическая информация",
-
     title:"Политика конфиденциальности",
-
     intro:"Информация об обработке персональных данных на VARDAPET.DE.",
-
     updated:"Обновлено: 22 октября 2026 года",
-
     sections:[
-
       ["1. Ответственное лицо",[
-
         "Вардуи Петросян — VARDAPET",
-
         "Германия",
-
         "Электронная почта: petrosyanvardui@gmail.com",
-
         "Телефон: +49 157 33273797",
-
         "Почтовый адрес будет добавлен до окончательной юридической публикации."
-
       ]],
-
       ["2. Общая информация и правовые основания",[
-
         "Персональные данные — сведения об идентифицированном или идентифицируемом физическом лице.",
-
         "Обработка осуществляется, в частности, на основании статьи 6(1)(f) GDPR для безопасной работы сайта и ответов на общие обращения, а также статьи 6(1)(b) GDPR для преддоговорных действий по запросу посетителя."
-
       ]],
-
       ["3. Хостинг и технические журналы",[
-
         "Сайт размещён на GitHub Pages. Могут обрабатываться технические данные, включая IP-адрес, время обращения, информацию о браузере и запрашиваемые ресурсы.",
-
         "Цель обработки — доступность и безопасность сайта. Правовое основание обработки, инициируемой владельцем, — статья 6(1)(f) GDPR.",
-
         "Владелец не определяет сроки хранения серверных журналов GitHub.",
-
         "Дополнительная информация: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",
-
         "Возможна обработка данных за пределами Европейской экономической зоны, в том числе в США. Информация о гарантиях доступна в политике GitHub."
-
       ]],
-
       ["4. Cookie и аналитика",[
-
         "В текущей конфигурации VARDAPET.DE не устанавливает собственные отслеживающие cookie и не использует Google Analytics, Meta Pixel или аналогичные инструменты.",
-
         "Рекламный трекинг и подписка на рассылку отсутствуют. При изменении сервисов политика будет обновлена."
-
       ]],
-
       ["5. Обращения",[
-
         "Данные, добровольно переданные по электронной почте или телефону, используются для рассмотрения обращения.",
-
         "Правовое основание — статья 6(1)(f) GDPR для общих обращений или статья 6(1)(b) GDPR для преддоговорных действий.",
-
         "Данные хранятся в течение необходимого срока, если законом не предусмотрено иное."
-
       ]],
-
       ["6. Внешние ссылки и Instagram",[
-
         "На сайте есть ссылка на Instagram, но его содержимое непосредственно не встроено.",
-
         "При переходе действуют правила конфиденциальности соответствующего сервиса.",
-
         "Дополнительная информация: https://privacycenter.instagram.com/policy/"
-
       ]],
-
       ["7. Получатели и сроки хранения",[
-
         "В зависимости от ситуации данные могут обрабатываться поставщиками хостинга, электронной почты и телекоммуникационных услуг.",
-
         "Персональные данные не продаются рекламодателям.",
-
         "Сроки хранения определяются целями обработки, требованиями законодательства и правилами поставщиков."
-
       ]],
-
       ["8. Ваши права",[
-
         "В соответствии с законом вы имеете право на доступ (статья 15 GDPR), исправление (16), удаление (17), ограничение обработки (18), переносимость (20) и возражение (21).",
-
         "Согласие можно отозвать в любое время с действием на будущее.",
-
         "Контакт: petrosyanvardui@gmail.com"
-
       ]],
-
       ["9. Жалобы",[
-
         "Вы можете подать жалобу в компетентный надзорный орган по защите данных.",
-
         "Уполномоченный орган Саксонии: https://www.datenschutz.sachsen.de/"
-
       ]],
-
       ["10. Автоматизированные решения",[
-
         "На сайте не применяется автоматизированное принятие решений или профилирование по статье 22 GDPR."
-
       ]],
-
       ["11. Изменения",[
-
         "Политика обновляется при изменении сайта, используемых сервисов или правовых требований."
-
       ]]
-
     ]
-
   }
+};
 
+const IMPRINT={
+  de:{
+    kicker:"Rechtliche Informationen",
+    title:"Impressum",
+    intro:"Angaben zum Internetauftritt VARDAPET.DE.",
+    notice:"Entwurf: Die vollständige ladungsfähige Anschrift und gegebenenfalls weitere gesetzlich erforderliche Angaben müssen vor der rechtlich vollständigen Veröffentlichung ergänzt werden.",
+    sections:[
+      ["Angaben zur verantwortlichen Person",[
+        "Vardui Petrosyan",
+        "Künstlerische Identität: VARDAPET",
+        "Deutschland",
+        "Ladungsfähige Anschrift: noch zu ergänzen"
+      ]],
+      ["Kontakt",[
+        "E-Mail: petrosyanvardui@gmail.com",
+        "Telefon: +49 157 33273797",
+        "Website: https://vardapet.de/"
+      ]],
+      ["Inhaltlich verantwortlich",[
+        "Vardui Petrosyan",
+        "Die vollständige Anschrift ist noch zu ergänzen."
+      ]],
+      ["Urheberrecht",[
+        "Die auf dieser Website veröffentlichten eigenen Texte, Fotografien, visuellen Arbeiten und künstlerischen Konzepte sind urheberrechtlich geschützt, soweit gesetzlich anwendbar. Eine Nutzung über gesetzliche Erlaubnisse hinaus bedarf der Zustimmung der jeweiligen Rechteinhaber."
+      ]],
+      ["Externe Links",[
+        "Für die Inhalte externer Websites sind die jeweiligen Anbieter verantwortlich. Externe Inhalte werden nicht als eigene Inhalte übernommen."
+      ]]
+    ]
+  },
+  en:{
+    kicker:"Legal Information",
+    title:"Impressum",
+    intro:"Legal information about VARDAPET.DE.",
+    notice:"Draft: A complete serviceable postal address and any additional legally required details must be added before this legal notice can be considered complete.",
+    sections:[
+      ["Responsible person",[
+        "Vardui Petrosyan",
+        "Artistic identity: VARDAPET",
+        "Germany",
+        "Serviceable postal address: to be added"
+      ]],
+      ["Contact",[
+        "Email: petrosyanvardui@gmail.com",
+        "Telephone: +49 157 33273797",
+        "Website: https://vardapet.de/"
+      ]],
+      ["Editorial responsibility",[
+        "Vardui Petrosyan",
+        "The complete postal address remains to be added."
+      ]],
+      ["Copyright",[
+        "Original texts, photographs, visual works and artistic concepts published on this website are protected by copyright where applicable. Uses beyond statutory permissions require the relevant rights holder's consent."
+      ]],
+      ["External links",[
+        "External websites remain the responsibility of their respective providers. Their content is not adopted as the operator's own content."
+      ]]
+    ]
+  },
+  ru:{
+    kicker:"Юридическая информация",
+    title:"Impressum",
+    intro:"Юридические сведения о сайте VARDAPET.DE.",
+    notice:"Черновик: до окончательного юридического оформления необходимо добавить полный почтовый адрес для официальной корреспонденции и другие сведения, если они обязательны в конкретном случае.",
+    sections:[
+      ["Ответственное лицо",[
+        "Вардуи Петросян",
+        "Художественная идентичность: VARDAPET",
+        "Германия",
+        "Полный почтовый адрес: будет добавлен"
+      ]],
+      ["Контакты",[
+        "Email: petrosyanvardui@gmail.com",
+        "Телефон: +49 157 33273797",
+        "Сайт: https://vardapet.de/"
+      ]],
+      ["Ответственность за содержание",[
+        "Вардуи Петросян",
+        "Полный почтовый адрес будет добавлен."
+      ]],
+      ["Авторские права",[
+        "Оригинальные тексты, фотографии, визуальные работы и художественные концепции на сайте охраняются авторским правом в применимых случаях. Использование сверх разрешённого законом требует согласия соответствующего правообладателя."
+      ]],
+      ["Внешние ссылки",[
+        "За содержание внешних сайтов отвечают их владельцы. Размещённые по ссылкам материалы не считаются собственным содержанием VARDAPET."
+      ]]
+    ]
+  }
 };
 
 const ORDER=[
-
   "about",
-
   "portfolio",
-
   "research",
-
   "collaborations",
-
   "contact"
-
 ];
 
 let lang="en";
-
 let section=null;
-
 let roleFilter="all";
-
-let typeFilter="all";
-
 let previousFocus=null;
-
 let activeScreen="intro";
-
 let transitioning=false;
 
 const intro=document.getElementById("intro");
-
 const visual=document.getElementById("visual");
-
 const enterSite=document.getElementById("enterSite");
-
 const returnIntro=document.getElementById("returnIntro");
-
 const overlay=document.getElementById("overlay");
-
 const content=document.getElementById("overlayContent");
-
 const closeBtn=document.getElementById("closeOverlay");
-
 const home=document.getElementById("home");
 
 function el(tag,cls="",value){
-
   const node=document.createElement(tag);
-
   if(cls)node.className=cls;
-
   if(value!==undefined)node.textContent=value;
-
   return node;
-
 }
 
 function showScreen(next){
-
   if(transitioning||activeScreen===next)return;
-
   transitioning=true;
 
   if(next==="visual"){
-
     intro.classList.add("entering");
 
     setTimeout(()=>{
-
       visual.setAttribute("aria-hidden","false");
-
       intro.setAttribute("aria-hidden","true");
-
       intro.classList.remove("entering");
-
       intro.inert=true;
-
       visual.inert=false;
-
       activeScreen="visual";
-
       transitioning=false;
-
       returnIntro.focus({preventScroll:true});
-
     },650);
-
   }else{
-
     intro.setAttribute("aria-hidden","false");
-
     visual.setAttribute("aria-hidden","true");
-
     intro.inert=false;
-
     visual.inert=true;
-
     activeScreen="intro";
 
     setTimeout(()=>{
-
       transitioning=false;
-
       enterSite.focus({preventScroll:true});
-
     },850);
-
   }
-
 }
 
 function header(parent,data){
+  if(data.kicker){
+    parent.append(
+      el("div","section-kicker",data.kicker)
+    );
+  }
 
   parent.append(
-
-    el("div","section-kicker",data.kicker),
-
     el("h1","section-title",data.title),
-
     el("p","section-intro",data.intro)
-
   );
-
 }
 
-function cards(parent,items,extra=""){
-
+function cards(parent,items,extra="",numbered=true){
   const grid=el("div","cards "+extra);
 
   items.forEach((item,i)=>{
-
     const card=el("article","card");
 
-    card.append(
-
-      el("div","card-number",String(i+1).padStart(2,"0"))
-
-    );
+    if(numbered){
+      card.append(
+        el("div","card-number",String(i+1).padStart(2,"0"))
+      );
+    }
 
     const bottom=el("div");
 
     bottom.append(
-
       el("h2","card-title",item[0]),
-
       el("p","card-description",item[1])
-
     );
 
     card.append(bottom);
-
     grid.append(card);
-
   });
 
   parent.append(grid);
-
 }
 
 function renderHome(){
-
   document.documentElement.lang=lang;
-
-  document.getElementById("roles").textContent=CONTENT[lang].roles;
+  document.getElementById("roles").textContent=
+    CONTENT[lang].roles;
 
   const nav=document.getElementById("navigation");
-
   nav.replaceChildren();
 
   ORDER.forEach(key=>{
-
     const b=el("button","",CONTENT[lang].nav[key]);
-
     b.type="button";
-
     b.addEventListener("click",()=>openSection(key));
-
     nav.append(b);
-
   });
 
   document.getElementById("privacyFooter").textContent=
-
     CONTENT[lang].privacyLabel;
 
   document.querySelectorAll("[data-lang]").forEach(b=>{
-
     const active=b.dataset.lang===lang;
-
     b.classList.toggle("active",active);
-
     b.setAttribute("aria-pressed",String(active));
-
   });
 
   document.title="VARDAPET — "+CONTENT[lang].roles;
 
   const descriptions={
-
     en:"VARDAPET — the independent artistic practice of Vardui Petrosyan. Direction, digital creation and cultural research.",
-
     de:"VARDAPET — die unabhängige künstlerische Praxis von Vardui Petrosyan. Regie, digitale Gestaltung und Kulturforschung.",
-
     ru:"VARDAPET — независимая художественная практика Вардуи Петросян. Режиссура, цифровое творчество и культурные исследования."
-
   };
 
   document.querySelector('meta[name="description"]').content=
-
     descriptions[lang];
-
 }
 
 function renderAbout(parent,data){
-
   header(parent,data);
 
   parent.append(
-
     el("p","body-copy",data.body),
-
     el("p","body-copy",data.philosophy),
-
     el("h2","section-heading",data.heading)
-
   );
 
-  cards(parent,data.cards,"about-cards");
-
-}
-
-function filterGroup(parent,label,options,group){
-
-  parent.append(el("div","filter-label",label));
-
-  const bar=el(
-
-    "div",
-
-    "filter-bar "+(
-
-      group==="role"?"primary-filters":"secondary-filters"
-
-    )
-
-  );
-
-  Object.entries(options).forEach(([key,value])=>{
-
-    const b=el("button","",value);
-
-    b.type="button";
-
-    b.dataset.group=group;
-
-    b.dataset.filter=key;
-
-    b.addEventListener("click",()=>{
-
-      if(group==="role")roleFilter=key;
-
-      else typeFilter=key;
-
-      applyFilters();
-
-    });
-
-    bar.append(b);
-
-  });
-
-  parent.append(bar);
-
+  cards(parent,data.cards,"about-cards",false);
 }
 
 function applyFilters(){
-
   let count=0;
 
   overlay.querySelectorAll(".portfolio-card").forEach(card=>{
-
-    const roleOK=
-
+    const matches=
       roleFilter==="all"||
-
       card.dataset.roles.split(",").includes(roleFilter);
 
-    const typeOK=
-
-      typeFilter==="all"||
-
-      card.dataset.type===typeFilter;
-
-    card.hidden=!(roleOK&&typeOK);
-
-    if(!card.hidden)count++;
-
+    card.hidden=!matches;
+    if(matches)count++;
   });
 
   overlay.querySelectorAll(".filter-bar button").forEach(b=>{
-
-    const active=b.dataset.group==="role"
-
-      ?b.dataset.filter===roleFilter
-
-      :b.dataset.filter===typeFilter;
-
+    const active=b.dataset.filter===roleFilter;
     b.classList.toggle("active",active);
-
     b.setAttribute("aria-pressed",String(active));
-
   });
 
   const counter=document.getElementById("resultsCount");
 
   if(counter){
-
     counter.textContent=
-
       CONTENT[lang].portfolio.results+": "+count;
-
   }
-
 }
 
 function renderPortfolio(parent,data){
-
   header(parent,data);
 
-  filterGroup(
-
-    parent,
-
-    data.roleLabel,
-
-    data.roleFilters,
-
-    "role"
-
+  parent.append(
+    el("div","filter-label",data.roleLabel)
   );
 
-  filterGroup(
+  const bar=el("div","filter-bar");
 
-    parent,
+  Object.entries(data.roleFilters).forEach(([key,value])=>{
+    const b=el("button","",value);
+    b.type="button";
+    b.dataset.filter=key;
 
-    data.typeLabel,
+    b.addEventListener("click",()=>{
+      roleFilter=key;
+      applyFilters();
+    });
 
-    data.typeFilters,
+    bar.append(b);
+  });
 
-    "type"
-
-  );
+  parent.append(bar);
 
   const counter=el("div","results-count");
-
   counter.id="resultsCount";
-
   parent.append(counter);
 
   const grid=el("div","cards");
 
   data.items.forEach((item,i)=>{
-
     const card=el("article","card portfolio-card");
-
-    card.dataset.type=item[2];
-
-    card.dataset.roles=item[3].join(",");
+    card.dataset.roles=item[2].join(",");
 
     card.append(
-
       el("div","card-number",String(i+1).padStart(2,"0"))
-
     );
 
     const bottom=el("div");
 
     bottom.append(
-
       el("h2","card-title",item[0]),
-
       el("p","card-description",item[1])
-
     );
 
-    if(item[4]){
-
+    if(item[3]){
       bottom.append(
-
-        el("span","project-status",item[4])
-
+        el("span","project-status",item[3])
       );
-
     }
 
     card.append(bottom);
-
     grid.append(card);
-
   });
 
   parent.append(grid);
+}
 
+function iconSvg(kind){
+  const ns="http://www.w3.org/2000/svg";
+  const svg=document.createElementNS(ns,"svg");
+  svg.setAttribute("viewBox","0 0 24 24");
+  svg.setAttribute("aria-hidden","true");
+
+  function shape(tag,attrs){
+    const node=document.createElementNS(ns,tag);
+    Object.entries(attrs).forEach(([k,v])=>{
+      node.setAttribute(k,v);
+    });
+    svg.append(node);
+  }
+
+  if(kind==="instagram"){
+    shape("rect",{x:2.5,y:2.5,width:19,height:19,rx:5});
+    shape("circle",{cx:12,cy:12,r:4.2});
+    shape("circle",{cx:17.6,cy:6.5,r:.9,fill:"currentColor",stroke:"none"});
+  }else if(kind==="mail"){
+    shape("rect",{x:2,y:4.5,width:20,height:15,rx:2});
+    shape("path",{d:"M3 6l9 7 9-7"});
+  }else{
+    shape("path",{
+      d:"M7 3.5l3.1 3.1-1.9 2.7c1.3 2.6 3.5 4.8 6.1 6.1l2.7-1.9 3.1 3.1-2.1 3.5c-.4.7-1.2 1-2 .8C9.3 19.4 4.6 14.7 3.1 8c-.2-.8.1-1.6.8-2L7 3.5z"
+    });
+  }
+
+  return svg;
 }
 
 function renderContact(parent,data){
-
   header(parent,data);
-
   parent.append(el("p","body-copy",data.location));
 
   const links=el("div","contact-links");
 
-  [
+  const entries=[
+    ["instagram","Instagram · @vardapet_",CONTACT.instagram],
+    ["mail",CONTACT.email,"mailto:"+CONTACT.email],
+    ["phone",CONTACT.phone,"tel:"+CONTACT.tel]
+  ];
 
-    ["Instagram · @vardapet_",CONTACT.instagram],
-
-    [CONTACT.email,"mailto:"+CONTACT.email],
-
-    [CONTACT.phone,"tel:"+CONTACT.tel]
-
-  ].forEach(([label,href])=>{
-
-    const a=el("a","",label);
-
+  entries.forEach(([kind,label,href])=>{
+    const a=el("a","contact-link");
     a.href=href;
 
     if(href.startsWith("https://")){
-
       a.target="_blank";
-
       a.rel="noopener noreferrer";
-
     }
 
-    links.append(a);
+    const icon=el("span","contact-icon");
+    icon.append(iconSvg(kind));
 
+    a.append(
+      icon,
+      el("span","contact-text",label),
+      el("span","contact-arrow","↗")
+    );
+
+    links.append(a);
   });
 
   parent.append(links);
 
   const legal=el("div","legal-links");
 
-  const privacy=el(
-
-    "button",
-
-    "",
-
-    CONTENT[lang].privacyLabel
-
-  );
-
-  privacy.type="button";
-
-  privacy.addEventListener(
-
-    "click",
-
-    ()=>openSection("privacy")
-
-  );
-
-  const imprint=el("button","","Impressum");
-
-  imprint.type="button";
-
-  imprint.addEventListener(
-
-    "click",
-
-    ()=>{location.href="impressum.html";}
-
-  );
-
-  legal.append(privacy,imprint);
+  [
+    [CONTENT[lang].privacyLabel,"privacy"],
+    ["Impressum","imprint"]
+  ].forEach(([label,key])=>{
+    const b=el("button","",label);
+    b.type="button";
+    b.addEventListener("click",()=>openSection(key));
+    legal.append(b);
+  });
 
   parent.append(legal);
-
 }
 
 function linkify(parent,text){
-
   const p=el("p");
-
   const re=/(https?:\/\/[^\s]+|petrosyanvardui@gmail\.com)/g;
 
   text.split(re).forEach(part=>{
-
     if(!part)return;
 
     if(
-
       part.startsWith("https://")||
-
       part==="petrosyanvardui@gmail.com"
-
     ){
-
       const a=el("a","",part);
-
       a.href=part.startsWith("https://")
-
         ?part
-
         :"mailto:"+part;
 
       if(part.startsWith("https://")){
-
         a.target="_blank";
-
         a.rel="noopener noreferrer";
-
       }
 
       p.append(a);
-
     }else{
-
       p.append(document.createTextNode(part));
-
     }
-
   });
 
   parent.append(p);
-
 }
 
-function renderPrivacy(parent,data){
-
+function renderLegal(parent,data,withNotice=false){
   header(parent,data);
 
-  parent.append(
+  if(data.updated){
+    parent.append(
+      el("div","privacy-note",data.updated)
+    );
+  }
 
-    el("div","privacy-note",data.updated)
-
-  );
+  if(withNotice&&data.notice){
+    parent.append(
+      el("div","legal-pending",data.notice)
+    );
+  }
 
   data.sections.forEach(([title,paragraphs])=>{
-
     const block=el("section","privacy-block");
-
     block.append(el("h2","",title));
 
     paragraphs.forEach(p=>linkify(block,p));
-
     parent.append(block);
-
   });
-
 }
 
 function renderSection(key){
-
   const wrapper=el("div");
 
   if(key==="privacy"){
-
-    renderPrivacy(wrapper,PRIVACY[lang]);
-
+    renderLegal(wrapper,PRIVACY[lang]);
+  }else if(key==="imprint"){
+    renderLegal(wrapper,IMPRINT[lang],true);
   }else{
-
     const data=CONTENT[lang][key];
 
     if(key==="about"){
-
       renderAbout(wrapper,data);
-
     }else if(key==="portfolio"){
-
       renderPortfolio(wrapper,data);
-
     }else if(key==="contact"){
-
       renderContact(wrapper,data);
-
     }else{
-
       header(wrapper,data);
-
       cards(wrapper,data.cards);
-
     }
-
   }
 
   content.replaceChildren(wrapper);
-
   overlay.scrollTop=0;
 
   overlay.setAttribute(
-
     "aria-label",
-
     key==="privacy"
-
       ?CONTENT[lang].privacyLabel
-
-      :CONTENT[lang].nav[key]
-
+      :key==="imprint"
+        ?"Impressum"
+        :CONTENT[lang].nav[key]
   );
 
   if(key==="portfolio")applyFilters();
-
 }
 
 function openSection(key){
-
-  if(![...ORDER,"privacy"].includes(key))return;
+  if(![...ORDER,"privacy","imprint"].includes(key))return;
 
   if(!section){
-
     previousFocus=document.activeElement;
-
   }
 
   section=key;
-
   renderSection(key);
 
   overlay.classList.add("open");
-
   closeBtn.classList.add("visible");
-
   document.body.style.overflow="hidden";
-
   home.inert=true;
-
   closeBtn.focus();
-
 }
 
 function closeSection(){
-
   overlay.classList.remove("open");
-
   closeBtn.classList.remove("visible");
 
   document.body.style.overflow="";
-
   home.inert=false;
 
   intro.inert=activeScreen!=="intro";
-
   visual.inert=activeScreen!=="visual";
 
   section=null;
 
   if(previousFocus&&previousFocus.isConnected){
-
     previousFocus.focus();
-
   }
 
   previousFocus=null;
-
 }
 
 function changeLanguage(next){
-
   if(!CONTENT[next])return;
 
   lang=next;
-
   renderHome();
 
   if(section)renderSection(section);
-
 }
 
 enterSite.addEventListener(
-
   "click",
-
   ()=>showScreen("visual")
-
 );
 
 returnIntro.addEventListener(
-
   "click",
-
   ()=>showScreen("intro")
-
 );
 
 document.querySelectorAll("[data-lang]").forEach(b=>{
-
   b.addEventListener(
-
     "click",
-
     ()=>changeLanguage(b.dataset.lang)
-
   );
-
 });
 
 document.getElementById("privacyFooter").addEventListener(
-
   "click",
-
   ()=>openSection("privacy")
-
 );
 
 document.getElementById("imprintFooter").addEventListener(
-
   "click",
-
-  ()=>{location.href="impressum.html";}
-
+  ()=>openSection("imprint")
 );
 
 closeBtn.addEventListener("click",closeSection);
 
 document.addEventListener("keydown",event=>{
-
   if(!section)return;
 
   if(event.key==="Escape"){
-
     closeSection();
-
     return;
-
   }
 
   if(event.key!=="Tab")return;
 
   const focusable=[
-
     closeBtn,
-
     ...overlay.querySelectorAll(
-
       'button:not([disabled]),a[href],input,select,textarea'
-
     )
-
   ].filter(node=>node.getClientRects().length>0);
 
   if(!focusable.length)return;
 
   const first=focusable[0];
-
   const last=focusable[focusable.length-1];
 
   if(event.shiftKey&&document.activeElement===first){
-
     event.preventDefault();
-
     last.focus();
-
   }else if(
-
     !event.shiftKey&&document.activeElement===last
-
   ){
-
     event.preventDefault();
-
     first.focus();
-
   }
-
 });
 
 intro.inert=false;
-
 visual.inert=true;
-
 renderHome();
-
 </script>
-
 </body>
-
 </html>
