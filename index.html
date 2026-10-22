@@ -8,11 +8,11 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
 <meta name="theme-color" content="#080808">
 
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index,follow">
 
 <meta name="description" content="VARDAPET — Vardui Petrosyan. Director, Digital Creator and Cultural Researcher.">
 
@@ -22,7 +22,7 @@
 
 <style>
 
-:root {
+:root{
 
   --bg:#080808;
 
@@ -34,9 +34,9 @@
 
 }
 
-* {box-sizing:border-box}
+*{box-sizing:border-box}
 
-html,body {
+html,body{
 
   margin:0;
 
@@ -56,11 +56,11 @@ html,body {
 
 }
 
-button,a {-webkit-tap-highlight-color:transparent}
+button,a{-webkit-tap-highlight-color:transparent}
 
-button {font:inherit;cursor:pointer}
+button{font:inherit;cursor:pointer}
 
-button:focus-visible,a:focus-visible {
+button:focus-visible,a:focus-visible{
 
   outline:1px solid white;
 
@@ -68,7 +68,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.site {
+.site{
 
   position:relative;
 
@@ -82,7 +82,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.scene {
+.scene{
 
   position:absolute;
 
@@ -94,7 +94,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.scene[aria-hidden="true"] {
+.scene[aria-hidden="true"]{
 
   opacity:0;
 
@@ -104,9 +104,9 @@ button:focus-visible,a:focus-visible {
 
 }
 
-/* FIRST SCREEN — NIGHT SKY */
+/* INTRO — NIGHT SKY */
 
-.intro {
+.intro{
 
   z-index:2;
 
@@ -122,7 +122,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.intro-photo {
+.intro-photo{
 
   position:absolute;
 
@@ -140,7 +140,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.intro::before {
+.intro::before{
 
   content:"";
 
@@ -148,13 +148,13 @@ button:focus-visible,a:focus-visible {
 
   inset:0;
 
-  background:rgba(0,0,0,.30);
+  background:rgba(0,0,0,.22);
 
   z-index:-2;
 
 }
 
-.intro::after {
+.intro::after{
 
   content:"";
 
@@ -166,9 +166,9 @@ button:focus-visible,a:focus-visible {
 
     ellipse at center,
 
-    transparent 20%,
+    rgba(0,0,0,.03) 12%,
 
-    rgba(0,0,0,.48) 100%
+    rgba(0,0,0,.34) 100%
 
   );
 
@@ -176,7 +176,19 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.logo-entry {
+/*
+
+  MOONLIGHT SILVER
+
+  Original logo preserved.
+
+  Silver illumination is produced with CSS.
+
+*/
+
+.logo-entry{
+
+  position:relative;
 
   display:flex;
 
@@ -192,13 +204,51 @@ button:focus-visible,a:focus-visible {
 
   background:transparent;
 
-  animation:logoBreath 4s ease-in-out infinite;
-
   transform-origin:center;
+
+  animation:logoBreath 4.8s ease-in-out infinite;
+
+  isolation:isolate;
 
 }
 
-.logo-entry img {
+.logo-entry::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:11%;
+
+  right:11%;
+
+  top:19%;
+
+  bottom:19%;
+
+  z-index:-1;
+
+  pointer-events:none;
+
+  background:radial-gradient(
+
+    ellipse at center,
+
+    rgba(172,196,228,.18) 0%,
+
+    rgba(129,158,199,.09) 38%,
+
+    transparent 75%
+
+  );
+
+  filter:blur(34px);
+
+  animation:moonHalo 4.8s ease-in-out infinite;
+
+}
+
+.logo-entry img{
 
   display:block;
 
@@ -208,41 +258,115 @@ button:focus-visible,a:focus-visible {
 
   object-fit:contain;
 
-  filter:drop-shadow(0 4px 25px rgba(0,0,0,.55));
+  filter:
+
+    brightness(2.2)
+
+    contrast(1.16)
+
+    drop-shadow(0 0 3px rgba(237,244,255,.85))
+
+    drop-shadow(0 0 11px rgba(183,209,248,.58))
+
+    drop-shadow(0 0 29px rgba(124,163,223,.32));
+
+  animation:moonlight 4.8s ease-in-out infinite;
+
+  transition:filter .3s ease;
 
 }
 
-@keyframes logoBreath {
+@keyframes logoBreath{
 
-  0%,100% {transform:scale(1)}
+  0%,100%{transform:scale(1)}
 
-  50% {transform:scale(1.045)}
-
-}
-
-.logo-entry:hover img {
-
-  filter:drop-shadow(0 0 18px rgba(255,255,255,.22));
+  50%{transform:scale(1.038)}
 
 }
 
-.intro.entering .logo-entry {
+@keyframes moonlight{
+
+  0%,100%{
+
+    filter:
+
+      brightness(2.05)
+
+      contrast(1.15)
+
+      drop-shadow(0 0 3px rgba(237,244,255,.8))
+
+      drop-shadow(0 0 10px rgba(183,209,248,.48))
+
+      drop-shadow(0 0 27px rgba(124,163,223,.27));
+
+  }
+
+  50%{
+
+    filter:
+
+      brightness(2.5)
+
+      contrast(1.2)
+
+      drop-shadow(0 0 5px rgba(245,249,255,.95))
+
+      drop-shadow(0 0 17px rgba(193,218,255,.72))
+
+      drop-shadow(0 0 39px rgba(140,177,235,.44));
+
+  }
+
+}
+
+@keyframes moonHalo{
+
+  0%,100%{opacity:.55;transform:scale(.96)}
+
+  50%{opacity:1;transform:scale(1.08)}
+
+}
+
+.logo-entry:hover img{
+
+  filter:
+
+    brightness(2.8)
+
+    contrast(1.2)
+
+    drop-shadow(0 0 7px rgba(255,255,255,.95))
+
+    drop-shadow(0 0 25px rgba(183,209,248,.8));
+
+}
+
+.intro.entering .logo-entry{
 
   animation:enterLogo .8s ease-in forwards;
 
 }
 
-@keyframes enterLogo {
+.intro.entering .logo-entry img,
 
-  0% {transform:scale(1);opacity:1}
+.intro.entering .logo-entry::before{
 
-  100% {transform:scale(1.13);opacity:0}
+  animation:none;
+
+}
+
+@keyframes enterLogo{
+
+  from{transform:scale(1);opacity:1}
+
+  to{transform:scale(1.14);opacity:0}
 
 }
 
 /* SECOND SCREEN */
 
-.visual {
+.visual{
 
   z-index:1;
 
@@ -252,7 +376,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-photo {
+.visual-photo{
 
   position:absolute;
 
@@ -270,7 +394,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual::before {
+.visual::before{
 
   content:"";
 
@@ -298,7 +422,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual::after {
+.visual::after{
 
   content:"";
 
@@ -320,7 +444,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.return-logo {
+.return-logo{
 
   position:absolute;
 
@@ -344,7 +468,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.language-switch {
+.language-switch{
 
   position:absolute;
 
@@ -360,7 +484,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.language-switch button {
+.language-switch button{
 
   padding:5px 0 9px;
 
@@ -378,7 +502,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.language-switch button.active {
+.language-switch button.active{
 
   color:white;
 
@@ -386,7 +510,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-heading {
+.visual-heading{
 
   position:absolute;
 
@@ -400,7 +524,7 @@ button:focus-visible,a:focus-visible {
 
   text-align:center;
 
-  color:#fff;
+  color:white;
 
   font-family:Georgia,"Times New Roman",serif;
 
@@ -418,7 +542,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-navigation {
+.visual-navigation{
 
   position:absolute;
 
@@ -440,7 +564,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-navigation button {
+.visual-navigation button{
 
   padding:9px 0;
 
@@ -462,13 +586,13 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-navigation button:hover {
+.visual-navigation button:hover{
 
   border-bottom-color:white;
 
 }
 
-.visual-footer {
+.visual-footer{
 
   position:absolute;
 
@@ -486,7 +610,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.visual-footer button {
+.visual-footer button{
 
   border:0;
 
@@ -502,9 +626,9 @@ button:focus-visible,a:focus-visible {
 
 }
 
-/* POPUPS */
+/* FULL-SCREEN CONTENT */
 
-.overlay {
+.overlay{
 
   display:none;
 
@@ -530,9 +654,9 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.overlay.open {display:block}
+.overlay.open{display:block}
 
-.overlay-inner {
+.overlay-inner{
 
   max-width:1050px;
 
@@ -542,15 +666,15 @@ button:focus-visible,a:focus-visible {
 
 }
 
-@keyframes appear {
+@keyframes appear{
 
-  from {opacity:0;transform:translateY(8px)}
+  from{opacity:0;transform:translateY(8px)}
 
-  to {opacity:1;transform:translateY(0)}
+  to{opacity:1;transform:translateY(0)}
 
 }
 
-.close-overlay {
+.close-overlay{
 
   display:none;
 
@@ -574,9 +698,9 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.close-overlay.visible {display:block}
+.close-overlay.visible{display:block}
 
-.section-kicker {
+.section-kicker{
 
   color:#999;
 
@@ -590,7 +714,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.section-title {
+.section-title{
 
   margin:0 0 28px;
 
@@ -600,7 +724,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.section-intro {
+.section-intro{
 
   max-width:790px;
 
@@ -614,7 +738,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.body-copy {
+.body-copy{
 
   max-width:790px;
 
@@ -626,7 +750,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.section-heading {
+.section-heading{
 
   margin:55px 0 25px;
 
@@ -634,7 +758,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.cards {
+.cards{
 
   display:grid;
 
@@ -644,7 +768,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.card {
+.card{
 
   min-width:0;
 
@@ -664,7 +788,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.card-number {
+.card-number{
 
   color:#777;
 
@@ -674,7 +798,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.card-title {
+.card-title{
 
   margin:25px 0 12px;
 
@@ -684,7 +808,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.card-description {
+.card-description{
 
   margin:0;
 
@@ -696,13 +820,13 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.about-cards {
+.about-cards{
 
   grid-template-columns:repeat(3,minmax(0,1fr));
 
 }
 
-.filter-label {
+.filter-label{
 
   margin:30px 0 14px;
 
@@ -716,7 +840,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.filter-bar {
+.filter-bar{
 
   display:flex;
 
@@ -728,7 +852,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.filter-bar button {
+.filter-bar button{
 
   padding:11px 13px;
 
@@ -742,7 +866,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.filter-bar button.active {
+.filter-bar button.active{
 
   color:#080808;
 
@@ -752,7 +876,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.primary-filters {
+.primary-filters{
 
   display:grid;
 
@@ -760,11 +884,11 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.primary-filters button {min-height:55px}
+.primary-filters button{min-height:55px}
 
-.portfolio-card[hidden] {display:none}
+.portfolio-card[hidden]{display:none}
 
-.project-status {
+.project-status{
 
   display:block;
 
@@ -780,7 +904,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.results-count {
+.results-count{
 
   margin:0 0 20px;
 
@@ -790,7 +914,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.contact-links {
+.contact-links{
 
   display:flex;
 
@@ -800,7 +924,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.contact-links a {
+.contact-links a{
 
   padding:24px 0;
 
@@ -816,7 +940,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.legal-links {
+.legal-links{
 
   display:flex;
 
@@ -828,7 +952,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.legal-links button {
+.legal-links button{
 
   border:0;
 
@@ -842,7 +966,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.privacy-block {
+.privacy-block{
 
   border-top:1px solid var(--line);
 
@@ -852,7 +976,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.privacy-block h2 {
+.privacy-block h2{
 
   margin:0 0 15px;
 
@@ -860,7 +984,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.privacy-block p {
+.privacy-block p{
 
   color:#bdb9b4;
 
@@ -872,7 +996,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.privacy-block a {
+.privacy-block a{
 
   color:#eee;
 
@@ -880,7 +1004,7 @@ button:focus-visible,a:focus-visible {
 
 }
 
-.privacy-note {
+.privacy-note{
 
   color:#999;
 
@@ -890,11 +1014,11 @@ button:focus-visible,a:focus-visible {
 
 }
 
-@media(max-width:650px) {
+@media(max-width:650px){
 
-  .logo-entry {width:96vw}
+  .logo-entry{width:96vw}
 
-  .return-logo {
+  .return-logo{
 
     left:15px;
 
@@ -902,7 +1026,7 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .language-switch {
+  .language-switch{
 
     right:15px;
 
@@ -910,7 +1034,7 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .visual-heading {
+  .visual-heading{
 
     top:calc(16% + env(safe-area-inset-top));
 
@@ -924,7 +1048,7 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .visual-navigation {
+  .visual-navigation{
 
     bottom:calc(9% + env(safe-area-inset-bottom));
 
@@ -936,7 +1060,7 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .visual-navigation button {
+  .visual-navigation button{
 
     font-size:clamp(9px,2.4vw,11px);
 
@@ -944,9 +1068,9 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .cards {grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
 
-  .about-cards {
+  .about-cards{
 
     grid-template-columns:repeat(3,minmax(0,1fr));
 
@@ -954,7 +1078,7 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .about-cards .card {
+  .about-cards .card{
 
     padding:12px 8px;
 
@@ -962,13 +1086,13 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .about-cards .card-title {
+  .about-cards .card-title{
 
     font-size:clamp(12px,3.2vw,17px);
 
   }
 
-  .about-cards .card-description {
+  .about-cards .card-description{
 
     font-size:10px;
 
@@ -976,13 +1100,13 @@ button:focus-visible,a:focus-visible {
 
   }
 
-  .primary-filters {
+  .primary-filters{
 
     grid-template-columns:repeat(2,minmax(0,1fr));
 
   }
 
-  .overlay {
+  .overlay{
 
     padding:
 
@@ -996,15 +1120,23 @@ button:focus-visible,a:focus-visible {
 
 }
 
-@media(prefers-reduced-motion:reduce) {
+@media(prefers-reduced-motion:reduce){
 
-  .logo-entry {animation:none}
+  .logo-entry,
 
-  .intro.entering .logo-entry {animation:none}
+  .logo-entry img,
 
-  .scene {transition:none}
+  .logo-entry::before,
 
-  .overlay-inner {animation:none}
+  .intro.entering .logo-entry{
+
+    animation:none;
+
+  }
+
+  .scene{transition:none}
+
+  .overlay-inner{animation:none}
 
 }
 
@@ -1015,8 +1147,6 @@ button:focus-visible,a:focus-visible {
 <body>
 
 <main class="site" id="home">
-
-  <!-- SCREEN 1: NIGHT SKY AND INTERACTIVE LOGO -->
 
   <section class="scene intro" id="intro" aria-label="Enter VARDAPET">
 
@@ -1047,8 +1177,6 @@ button:focus-visible,a:focus-visible {
     </button>
 
   </section>
-
-  <!-- SCREEN 2: PHOTO AND NAVIGATION -->
 
   <section class="scene visual" id="visual" aria-hidden="true">
 
@@ -1086,7 +1214,15 @@ button:focus-visible,a:focus-visible {
 
     <h1 class="visual-heading" id="roles"></h1>
 
-    <nav class="visual-navigation" id="navigation" aria-label="Main navigation"></nav>
+    <nav
+
+      class="visual-navigation"
+
+      id="navigation"
+
+      aria-label="Main navigation"
+
+    ></nav>
 
     <div class="visual-footer">
 
@@ -1100,9 +1236,31 @@ button:focus-visible,a:focus-visible {
 
 </main>
 
-<button class="close-overlay" id="closeOverlay" type="button" aria-label="Close">×</button>
+<button
 
-<section class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="VARDAPET">
+  class="close-overlay"
+
+  id="closeOverlay"
+
+  type="button"
+
+  aria-label="Close"
+
+>×</button>
+
+<section
+
+  class="overlay"
+
+  id="overlay"
+
+  role="dialog"
+
+  aria-modal="true"
+
+  aria-label="VARDAPET"
+
+>
 
   <div class="overlay-inner" id="overlayContent"></div>
 
@@ -1110,7 +1268,7 @@ button:focus-visible,a:focus-visible {
 
 <script>
 
-const CONTACT = {
+const CONTACT={
 
   instagram:"https://www.instagram.com/vardapet_/",
 
@@ -1122,7 +1280,7 @@ const CONTACT = {
 
 };
 
-const CONTENT = {
+const CONTENT={
 
   en:{
 
@@ -1672,7 +1830,7 @@ const CONTENT = {
 
 };
 
-const PRIVACY = {
+const PRIVACY={
 
   de:{
 
@@ -2038,7 +2196,15 @@ const PRIVACY = {
 
 const ORDER=[
 
-  "about","portfolio","research","collaborations","contact"
+  "about",
+
+  "portfolio",
+
+  "research",
+
+  "collaborations",
+
+  "contact"
 
 ];
 
@@ -2072,25 +2238,25 @@ const closeBtn=document.getElementById("closeOverlay");
 
 const home=document.getElementById("home");
 
-function el(tag,cls="",value) {
+function el(tag,cls="",value){
 
   const node=document.createElement(tag);
 
-  if(cls) node.className=cls;
+  if(cls)node.className=cls;
 
-  if(value!==undefined) node.textContent=value;
+  if(value!==undefined)node.textContent=value;
 
   return node;
 
 }
 
-function showScreen(next) {
+function showScreen(next){
 
-  if(transitioning||activeScreen===next) return;
+  if(transitioning||activeScreen===next)return;
 
   transitioning=true;
 
-  if(next==="visual") {
+  if(next==="visual"){
 
     intro.classList.add("entering");
 
@@ -2114,7 +2280,7 @@ function showScreen(next) {
 
     },650);
 
-  } else {
+  }else{
 
     intro.setAttribute("aria-hidden","false");
 
@@ -2138,7 +2304,7 @@ function showScreen(next) {
 
 }
 
-function header(parent,data) {
+function header(parent,data){
 
   parent.append(
 
@@ -2152,7 +2318,7 @@ function header(parent,data) {
 
 }
 
-function cards(parent,items,extra="") {
+function cards(parent,items,extra=""){
 
   const grid=el("div","cards "+extra);
 
@@ -2160,7 +2326,11 @@ function cards(parent,items,extra="") {
 
     const card=el("article","card");
 
-    card.append(el("div","card-number",String(i+1).padStart(2,"0")));
+    card.append(
+
+      el("div","card-number",String(i+1).padStart(2,"0"))
+
+    );
 
     const bottom=el("div");
 
@@ -2182,7 +2352,7 @@ function cards(parent,items,extra="") {
 
 }
 
-function renderHome() {
+function renderHome(){
 
   document.documentElement.lang=lang;
 
@@ -2204,7 +2374,9 @@ function renderHome() {
 
   });
 
-  document.getElementById("privacyFooter").textContent=CONTENT[lang].privacyLabel;
+  document.getElementById("privacyFooter").textContent=
+
+    CONTENT[lang].privacyLabel;
 
   document.querySelectorAll("[data-lang]").forEach(b=>{
 
@@ -2228,11 +2400,13 @@ function renderHome() {
 
   };
 
-  document.querySelector('meta[name="description"]').content=descriptions[lang];
+  document.querySelector('meta[name="description"]').content=
+
+    descriptions[lang];
 
 }
 
-function renderAbout(parent,data) {
+function renderAbout(parent,data){
 
   header(parent,data);
 
@@ -2250,11 +2424,21 @@ function renderAbout(parent,data) {
 
 }
 
-function filterGroup(parent,label,options,group) {
+function filterGroup(parent,label,options,group){
 
   parent.append(el("div","filter-label",label));
 
-  const bar=el("div","filter-bar "+(group==="role"?"primary-filters":"secondary-filters"));
+  const bar=el(
+
+    "div",
+
+    "filter-bar "+(
+
+      group==="role"?"primary-filters":"secondary-filters"
+
+    )
+
+  );
 
   Object.entries(options).forEach(([key,value])=>{
 
@@ -2268,7 +2452,7 @@ function filterGroup(parent,label,options,group) {
 
     b.addEventListener("click",()=>{
 
-      if(group==="role") roleFilter=key;
+      if(group==="role")roleFilter=key;
 
       else typeFilter=key;
 
@@ -2284,19 +2468,27 @@ function filterGroup(parent,label,options,group) {
 
 }
 
-function applyFilters() {
+function applyFilters(){
 
   let count=0;
 
   overlay.querySelectorAll(".portfolio-card").forEach(card=>{
 
-    const roleOK=roleFilter==="all"||card.dataset.roles.split(",").includes(roleFilter);
+    const roleOK=
 
-    const typeOK=typeFilter==="all"||card.dataset.type===typeFilter;
+      roleFilter==="all"||
+
+      card.dataset.roles.split(",").includes(roleFilter);
+
+    const typeOK=
+
+      typeFilter==="all"||
+
+      card.dataset.type===typeFilter;
 
     card.hidden=!(roleOK&&typeOK);
 
-    if(!card.hidden) count++;
+    if(!card.hidden)count++;
 
   });
 
@@ -2316,17 +2508,43 @@ function applyFilters() {
 
   const counter=document.getElementById("resultsCount");
 
-  if(counter) counter.textContent=CONTENT[lang].portfolio.results+": "+count;
+  if(counter){
+
+    counter.textContent=
+
+      CONTENT[lang].portfolio.results+": "+count;
+
+  }
 
 }
 
-function renderPortfolio(parent,data) {
+function renderPortfolio(parent,data){
 
   header(parent,data);
 
-  filterGroup(parent,data.roleLabel,data.roleFilters,"role");
+  filterGroup(
 
-  filterGroup(parent,data.typeLabel,data.typeFilters,"type");
+    parent,
+
+    data.roleLabel,
+
+    data.roleFilters,
+
+    "role"
+
+  );
+
+  filterGroup(
+
+    parent,
+
+    data.typeLabel,
+
+    data.typeFilters,
+
+    "type"
+
+  );
 
   const counter=el("div","results-count");
 
@@ -2344,7 +2562,11 @@ function renderPortfolio(parent,data) {
 
     card.dataset.roles=item[3].join(",");
 
-    card.append(el("div","card-number",String(i+1).padStart(2,"0")));
+    card.append(
+
+      el("div","card-number",String(i+1).padStart(2,"0"))
+
+    );
 
     const bottom=el("div");
 
@@ -2356,7 +2578,15 @@ function renderPortfolio(parent,data) {
 
     );
 
-    if(item[4]) bottom.append(el("span","project-status",item[4]));
+    if(item[4]){
+
+      bottom.append(
+
+        el("span","project-status",item[4])
+
+      );
+
+    }
 
     card.append(bottom);
 
@@ -2368,7 +2598,7 @@ function renderPortfolio(parent,data) {
 
 }
 
-function renderContact(parent,data) {
+function renderContact(parent,data){
 
   header(parent,data);
 
@@ -2390,7 +2620,7 @@ function renderContact(parent,data) {
 
     a.href=href;
 
-    if(href.startsWith("https://")) {
+    if(href.startsWith("https://")){
 
       a.target="_blank";
 
@@ -2406,17 +2636,37 @@ function renderContact(parent,data) {
 
   const legal=el("div","legal-links");
 
-  const privacy=el("button","",CONTENT[lang].privacyLabel);
+  const privacy=el(
+
+    "button",
+
+    "",
+
+    CONTENT[lang].privacyLabel
+
+  );
 
   privacy.type="button";
 
-  privacy.addEventListener("click",()=>openSection("privacy"));
+  privacy.addEventListener(
+
+    "click",
+
+    ()=>openSection("privacy")
+
+  );
 
   const imprint=el("button","","Impressum");
 
   imprint.type="button";
 
-  imprint.addEventListener("click",()=>{location.href="impressum.html"});
+  imprint.addEventListener(
+
+    "click",
+
+    ()=>{location.href="impressum.html";}
+
+  );
 
   legal.append(privacy,imprint);
 
@@ -2424,7 +2674,7 @@ function renderContact(parent,data) {
 
 }
 
-function linkify(parent,text) {
+function linkify(parent,text){
 
   const p=el("p");
 
@@ -2432,15 +2682,25 @@ function linkify(parent,text) {
 
   text.split(re).forEach(part=>{
 
-    if(!part) return;
+    if(!part)return;
 
-    if(part.startsWith("https://")||part==="petrosyanvardui@gmail.com"){
+    if(
+
+      part.startsWith("https://")||
+
+      part==="petrosyanvardui@gmail.com"
+
+    ){
 
       const a=el("a","",part);
 
-      a.href=part.startsWith("https://")?part:"mailto:"+part;
+      a.href=part.startsWith("https://")
 
-      if(part.startsWith("https://")) {
+        ?part
+
+        :"mailto:"+part;
+
+      if(part.startsWith("https://")){
 
         a.target="_blank";
 
@@ -2450,7 +2710,7 @@ function linkify(parent,text) {
 
       p.append(a);
 
-    } else {
+    }else{
 
       p.append(document.createTextNode(part));
 
@@ -2462,11 +2722,15 @@ function linkify(parent,text) {
 
 }
 
-function renderPrivacy(parent,data) {
+function renderPrivacy(parent,data){
 
   header(parent,data);
 
-  parent.append(el("div","privacy-note",data.updated));
+  parent.append(
+
+    el("div","privacy-note",data.updated)
+
+  );
 
   data.sections.forEach(([title,paragraphs])=>{
 
@@ -2482,25 +2746,31 @@ function renderPrivacy(parent,data) {
 
 }
 
-function renderSection(key) {
+function renderSection(key){
 
   const wrapper=el("div");
 
-  if(key==="privacy") {
+  if(key==="privacy"){
 
     renderPrivacy(wrapper,PRIVACY[lang]);
 
-  } else {
+  }else{
 
     const data=CONTENT[lang][key];
 
-    if(key==="about") renderAbout(wrapper,data);
+    if(key==="about"){
 
-    else if(key==="portfolio") renderPortfolio(wrapper,data);
+      renderAbout(wrapper,data);
 
-    else if(key==="contact") renderContact(wrapper,data);
+    }else if(key==="portfolio"){
 
-    else {
+      renderPortfolio(wrapper,data);
+
+    }else if(key==="contact"){
+
+      renderContact(wrapper,data);
+
+    }else{
 
       header(wrapper,data);
 
@@ -2518,19 +2788,27 @@ function renderSection(key) {
 
     "aria-label",
 
-    key==="privacy"?CONTENT[lang].privacyLabel:CONTENT[lang].nav[key]
+    key==="privacy"
+
+      ?CONTENT[lang].privacyLabel
+
+      :CONTENT[lang].nav[key]
 
   );
 
-  if(key==="portfolio") applyFilters();
+  if(key==="portfolio")applyFilters();
 
 }
 
-function openSection(key) {
+function openSection(key){
 
-  if(![...ORDER,"privacy"].includes(key)) return;
+  if(![...ORDER,"privacy"].includes(key))return;
 
-  if(!section) previousFocus=document.activeElement;
+  if(!section){
+
+    previousFocus=document.activeElement;
+
+  }
 
   section=key;
 
@@ -2548,7 +2826,7 @@ function openSection(key) {
 
 }
 
-function closeSection() {
+function closeSection(){
 
   overlay.classList.remove("open");
 
@@ -2564,43 +2842,69 @@ function closeSection() {
 
   section=null;
 
-  if(previousFocus&&previousFocus.isConnected) previousFocus.focus();
+  if(previousFocus&&previousFocus.isConnected){
+
+    previousFocus.focus();
+
+  }
 
   previousFocus=null;
 
 }
 
-function changeLanguage(next) {
+function changeLanguage(next){
 
-  if(!CONTENT[next]) return;
+  if(!CONTENT[next])return;
 
   lang=next;
 
   renderHome();
 
-  if(section) renderSection(section);
+  if(section)renderSection(section);
 
 }
 
-enterSite.addEventListener("click",()=>showScreen("visual"));
+enterSite.addEventListener(
 
-returnIntro.addEventListener("click",()=>showScreen("intro"));
+  "click",
+
+  ()=>showScreen("visual")
+
+);
+
+returnIntro.addEventListener(
+
+  "click",
+
+  ()=>showScreen("intro")
+
+);
 
 document.querySelectorAll("[data-lang]").forEach(b=>{
 
-  b.addEventListener("click",()=>changeLanguage(b.dataset.lang));
+  b.addEventListener(
+
+    "click",
+
+    ()=>changeLanguage(b.dataset.lang)
+
+  );
 
 });
 
 document.getElementById("privacyFooter").addEventListener(
 
-  "click",()=>openSection("privacy")
+  "click",
+
+  ()=>openSection("privacy")
 
 );
 
 document.getElementById("imprintFooter").addEventListener(
 
-  "click",()=>{location.href="impressum.html"}
+  "click",
+
+  ()=>{location.href="impressum.html";}
 
 );
 
@@ -2608,9 +2912,9 @@ closeBtn.addEventListener("click",closeSection);
 
 document.addEventListener("keydown",event=>{
 
-  if(!section) return;
+  if(!section)return;
 
-  if(event.key==="Escape") {
+  if(event.key==="Escape"){
 
     closeSection();
 
@@ -2618,7 +2922,7 @@ document.addEventListener("keydown",event=>{
 
   }
 
-  if(event.key!=="Tab") return;
+  if(event.key!=="Tab")return;
 
   const focusable=[
 
@@ -2632,19 +2936,23 @@ document.addEventListener("keydown",event=>{
 
   ].filter(node=>node.getClientRects().length>0);
 
-  if(!focusable.length) return;
+  if(!focusable.length)return;
 
   const first=focusable[0];
 
   const last=focusable[focusable.length-1];
 
-  if(event.shiftKey&&document.activeElement===first) {
+  if(event.shiftKey&&document.activeElement===first){
 
     event.preventDefault();
 
     last.focus();
 
-  } else if(!event.shiftKey&&document.activeElement===last) {
+  }else if(
+
+    !event.shiftKey&&document.activeElement===last
+
+  ){
 
     event.preventDefault();
 
