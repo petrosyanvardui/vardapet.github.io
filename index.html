@@ -36,9 +36,17 @@
 
 }
 
-* { box-sizing: border-box; }
+* {
 
-html { scroll-behavior: smooth; }
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
 
 body {
 
@@ -54,11 +62,25 @@ body {
 
 }
 
-button, a { -webkit-tap-highlight-color: transparent; }
+button,
 
-button { font: inherit; }
+a {
 
-a { color: inherit; }
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+button {
+
+  font: inherit;
+
+}
+
+a {
+
+  color: inherit;
+
+}
 
 /* LANGUAGE SWITCH */
 
@@ -126,7 +148,7 @@ a { color: inherit; }
 
 }
 
-/* ORIGINAL IMAGE LOGO */
+/* ORIGINAL VARDAPET LOGO */
 
 .brand {
 
@@ -223,14 +245,6 @@ a { color: inherit; }
   animation-fill-mode: both;
 
 }
-
-/*
-
-  Each theme appears at a fixed position.
-
-  Small negative delays create a gentle cascade.
-
-*/
 
 .theme-word:nth-child(1) {
 
@@ -398,7 +412,11 @@ a { color: inherit; }
 
 }
 
-.overlay.open { display: block; }
+.overlay.open {
+
+  display: block;
+
+}
 
 .overlay-content {
 
@@ -412,9 +430,21 @@ a { color: inherit; }
 
 @keyframes appear {
 
-  from { opacity: 0; transform: translateY(10px); }
+  from {
 
-  to { opacity: 1; transform: translateY(0); }
+    opacity: 0;
+
+    transform: translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
 
 }
 
@@ -444,9 +474,13 @@ a { color: inherit; }
 
 }
 
-.close-overlay.visible { display: block; }
+.close-overlay.visible {
 
-/* SECTIONS */
+  display: block;
+
+}
+
+/* SECTION TYPOGRAPHY */
 
 .section-kicker {
 
@@ -584,7 +618,7 @@ a { color: inherit; }
 
 }
 
-/* ABOUT — THREE CARDS IN ONE ROW */
+/* ABOUT — THREE COLUMNS */
 
 .about-cards {
 
@@ -680,11 +714,23 @@ a { color: inherit; }
 
 }
 
-.secondary-filters { margin-bottom: 45px; }
+.secondary-filters {
 
-.portfolio-card { min-height: 245px; }
+  margin-bottom: 45px;
 
-.portfolio-card[hidden] { display: none; }
+}
+
+.portfolio-card {
+
+  min-height: 245px;
+
+}
+
+.portfolio-card[hidden] {
+
+  display: none;
+
+}
 
 .project-status {
 
@@ -742,7 +788,11 @@ a { color: inherit; }
 
 }
 
-.contact-links a:hover { color: #aaa; }
+.contact-links a:hover {
+
+  color: #aaa;
+
+}
 
 .legal {
 
@@ -764,9 +814,17 @@ a { color: inherit; }
 
 }
 
-.legal a { text-decoration: none; }
+.legal a {
 
-.legal a:hover { color: white; }
+  text-decoration: none;
+
+}
+
+.legal a:hover {
+
+  color: white;
+
+}
 
 /* MOBILE */
 
@@ -1020,7 +1078,13 @@ a { color: inherit; }
 
   <div class="brand">
 
-    <img src="LOGO.png" alt="VARDAPET — original artist logo">
+    <img
+
+      src="logo.PNG"
+
+      alt="VARDAPET — original artist logo"
+
+    >
 
   </div>
 
@@ -1986,9 +2050,17 @@ function element(tag, className, text) {
 
   const node = document.createElement(tag);
 
-  if (className) node.className = className;
+  if (className) {
 
-  if (text !== undefined) node.textContent = text;
+    node.className = className;
+
+  }
+
+  if (text !== undefined) {
+
+    node.textContent = text;
+
+  }
 
   return node;
 
@@ -2008,7 +2080,11 @@ function renderHome() {
 
   data.themes.forEach(theme => {
 
-    themes.appendChild(element("span", "theme-word", theme));
+    themes.appendChild(
+
+      element("span", "theme-word", theme)
+
+    );
 
   });
 
@@ -2016,7 +2092,15 @@ function renderHome() {
 
   ORDER.forEach(key => {
 
-    const button = element("button", "", data.navigation[key]);
+    const button = element(
+
+      "button",
+
+      "",
+
+      data.navigation[key]
+
+    );
 
     button.type = "button";
 
@@ -2042,11 +2126,23 @@ function renderHome() {
 
 function addHeader(container, kicker, title, intro) {
 
-  container.appendChild(element("div", "section-kicker", kicker));
+  container.appendChild(
 
-  container.appendChild(element("h1", "section-title", title));
+    element("div", "section-kicker", kicker)
 
-  container.appendChild(element("p", "section-intro", intro));
+  );
+
+  container.appendChild(
+
+    element("h1", "section-title", title)
+
+  );
+
+  container.appendChild(
+
+    element("p", "section-intro", intro)
+
+  );
 
 }
 
@@ -2060,15 +2156,31 @@ function addCards(container, items, extraClass = "") {
 
     card.appendChild(
 
-      element("div", "card-number", String(index + 1).padStart(2, "0"))
+      element(
+
+        "div",
+
+        "card-number",
+
+        String(index + 1).padStart(2, "0")
+
+      )
 
     );
 
     const bottom = element("div");
 
-    bottom.appendChild(element("h2", "card-title", item[0]));
+    bottom.appendChild(
 
-    bottom.appendChild(element("p", "card-description", item[1]));
+      element("h2", "card-title", item[0])
+
+    );
+
+    bottom.appendChild(
+
+      element("p", "card-description", item[1])
+
+    );
 
     card.appendChild(bottom);
 
@@ -2082,13 +2194,35 @@ function addCards(container, items, extraClass = "") {
 
 function renderAbout(container, data) {
 
-  addHeader(container, data.kicker, data.title, data.intro);
+  addHeader(
 
-  container.appendChild(element("p", "body-copy", data.body));
+    container,
 
-  container.appendChild(element("p", "body-copy", data.philosophy));
+    data.kicker,
 
-  container.appendChild(element("h2", "section-heading", data.heading));
+    data.title,
+
+    data.intro
+
+  );
+
+  container.appendChild(
+
+    element("p", "body-copy", data.body)
+
+  );
+
+  container.appendChild(
+
+    element("p", "body-copy", data.philosophy)
+
+  );
+
+  container.appendChild(
+
+    element("h2", "section-heading", data.heading)
+
+  );
 
   addCards(container, data.cards, "about-cards");
 
@@ -2096,7 +2230,11 @@ function renderAbout(container, data) {
 
 function createFilterGroup(container, label, options, groupName) {
 
-  container.appendChild(element("div", "filter-label", label));
+  container.appendChild(
+
+    element("div", "filter-label", label)
+
+  );
 
   const bar = element(
 
@@ -2170,7 +2308,11 @@ function applyPortfolioFilters() {
 
     card.hidden = !visible;
 
-    if (visible) visibleCount++;
+    if (visible) {
+
+      visibleCount++;
+
+    }
 
   });
 
@@ -2202,7 +2344,17 @@ function applyPortfolioFilters() {
 
 function renderPortfolio(container, data) {
 
-  addHeader(container, data.kicker, data.title, data.intro);
+  addHeader(
+
+    container,
+
+    data.kicker,
+
+    data.title,
+
+    data.intro
+
+  );
 
   createFilterGroup(
 
@@ -2246,15 +2398,31 @@ function renderPortfolio(container, data) {
 
     card.appendChild(
 
-      element("div", "card-number", String(index + 1).padStart(2, "0"))
+      element(
+
+        "div",
+
+        "card-number",
+
+        String(index + 1).padStart(2, "0")
+
+      )
 
     );
 
     const bottom = element("div");
 
-    bottom.appendChild(element("h2", "card-title", item.title));
+    bottom.appendChild(
 
-    bottom.appendChild(element("p", "card-description", item.description));
+      element("h2", "card-title", item.title)
+
+    );
+
+    bottom.appendChild(
+
+      element("p", "card-description", item.description)
+
+    );
 
     if (item.status) {
 
@@ -2278,19 +2446,57 @@ function renderPortfolio(container, data) {
 
 function renderContact(container, data) {
 
-  addHeader(container, data.kicker, data.title, data.intro);
+  addHeader(
 
-  container.appendChild(element("p", "body-copy", data.location));
+    container,
+
+    data.kicker,
+
+    data.title,
+
+    data.intro
+
+  );
+
+  container.appendChild(
+
+    element("p", "body-copy", data.location)
+
+  );
 
   const links = element("div", "contact-links");
 
   const entries = [
 
-    ["Instagram · @vardapet_", CONTACT.instagram, true],
+    [
 
-    [CONTACT.email, "mailto:" + CONTACT.email, false],
+      "Instagram · @vardapet_",
 
-    [CONTACT.phoneDisplay, "tel:" + CONTACT.phoneLink, false]
+      CONTACT.instagram,
+
+      true
+
+    ],
+
+    [
+
+      CONTACT.email,
+
+      "mailto:" + CONTACT.email,
+
+      false
+
+    ],
+
+    [
+
+      CONTACT.phoneDisplay,
+
+      "tel:" + CONTACT.phoneLink,
+
+      false
+
+    ]
 
   ];
 
@@ -2352,7 +2558,17 @@ function renderSection(key) {
 
   } else {
 
-    addHeader(container, data.kicker, data.title, data.intro);
+    addHeader(
+
+      container,
+
+      data.kicker,
+
+      data.title,
+
+      data.intro
+
+    );
 
     addCards(container, data.cards);
 
@@ -2380,7 +2596,11 @@ function renderSection(key) {
 
 function openSection(key) {
 
-  if (!ORDER.includes(key)) return;
+  if (!ORDER.includes(key)) {
+
+    return;
+
+  }
 
   previousFocus = document.activeElement;
 
@@ -2418,7 +2638,11 @@ function closeSection() {
 
 function changeLanguage(lang) {
 
-  if (!CONTENT[lang]) return;
+  if (!CONTENT[lang]) {
+
+    return;
+
+  }
 
   currentLang = lang;
 
@@ -2476,7 +2700,13 @@ document.addEventListener("keydown", event => {
 
       last.focus();
 
-    } else if (!event.shiftKey && document.activeElement === last) {
+    } else if (
+
+      !event.shiftKey &&
+
+      document.activeElement === last
+
+    ) {
 
       event.preventDefault();
 
